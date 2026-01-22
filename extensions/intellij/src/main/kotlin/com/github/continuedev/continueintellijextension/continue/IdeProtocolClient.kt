@@ -8,6 +8,7 @@ import com.github.continuedev.continueintellijextension.browser.ContinueBrowserS
 import com.github.continuedev.continueintellijextension.editor.DiffStreamService
 import com.github.continuedev.continueintellijextension.editor.EditorUtils
 import com.github.continuedev.continueintellijextension.error.ContinueSentryService
+import com.github.continuedev.continueintellijextension.network.NetworkGate
 import com.github.continuedev.continueintellijextension.protocol.*
 import com.github.continuedev.continueintellijextension.services.ContinueExtensionSettings
 import com.github.continuedev.continueintellijextension.services.ContinuePluginService
@@ -386,6 +387,7 @@ class IdeProtocolClient(
                             dataElement.toString(),
                             OpenUrlParam::class.java
                         )
+                        NetworkGate.checkHost(java.net.URI(url).host)
                         ide.openUrl(url)
                         respond(null)
                     }
