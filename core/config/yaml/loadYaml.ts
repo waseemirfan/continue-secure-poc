@@ -143,6 +143,15 @@ async function loadConfigYaml(options: {
   }
 
   if (config && isAssistantUnrolledNonNullable(config)) {
+    // SECURE BUILD: block any reconfiguration via URLs
+    const serialized = JSON.stringify(config);
+    if (/https?:\/\//i.test(serialized)) {
+      errors.push({
+        fatal: true,
+        message:
+          "Secure Continue build: configuration contains URL-like values. Reconfiguration to external or internal endpoints is not allowed.",
+      } as ConfigValidationError);
+    }
     errors.push(...validateConfigYaml(config));
   }
 

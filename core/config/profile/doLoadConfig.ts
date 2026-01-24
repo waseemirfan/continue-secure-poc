@@ -128,6 +128,15 @@ export default async function doLoadConfig(options: {
       workOsAccessToken,
     });
     newConfig = result.config;
+    if (newConfig) {
+      /* SECURE BUILD: final safety net */
+      const serialized = JSON.stringify(newConfig);
+      if (/https?:\/\//i.test(serialized)) {
+        throw new Error(
+          "Secure Continue build violation: configuration contains URL-like values.",
+        );
+      }
+    }
     errors = result.errors;
     configLoadInterrupted = result.configLoadInterrupted;
   } else {
