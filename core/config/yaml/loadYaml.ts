@@ -143,6 +143,10 @@ async function loadConfigYaml(options: {
   }
 
   if (config && isAssistantUnrolledNonNullable(config)) {
+    // SECURE BUILD: block any reconfiguration via URLs
+    errors.push(...validateOnlyLocalModels(config));
+    const urlValidationErrors = validateConfigYamlUrlsAreLocal(config);
+    errors.push(...urlValidationErrors);
     errors.push(...validateConfigYaml(config));
   }
 
@@ -469,4 +473,100 @@ export async function loadContinueConfigFromYaml(options: {
     errors: [...(configYamlResult.errors ?? []), ...localErrors],
     configLoadInterrupted: false,
   };
+}
+
+/**
+ * Validates that all URLs in the YAML config are local (loopback addresses only).
+ * Returns validation errors for any non-local or malformed URLs.
+ *
+ * @param config The YAML configuration to validate
+ * @returns Array of ConfigValidationError for any URL violations
+ */
+function validateConfigYamlUrlsAreLocal(
+  config: AssistantUnrolled,
+): ConfigValidationError[] {
+  const validationErrors: ConfigValidationError[] = [];
+  const seen = new Set<any>();
+
+  const visit = (value: any) => {
+    if (value === null || value === undefined) return;
+
+    if (typeof value === "string") {
+      const matches = value.match(/https?:\/\/[^\s"'<>]+/gi) ?? [];
+
+      for (const rawUrl of matches) {
+        let u: URL;
+        try {
+          u = new URL(rawUrl);
+        } catch {
+          validationErrors.push({
+            fatal: true,
+            message: `Secure Continue build: malformed URL in config: ${rawUrl}`,
+          });
+          continue;
+        }
+
+        const host = u.hostname;
+        const isLoopback =
+          host === "localhost" || host === "127.0.0.1" || host === "::1";
+
+        if (!isLoopback) {
+          validationErrors.push({
+            fatal: true,
+            message: `Secure Continue build: non-local URL in config: ${rawUrl}`,
+          });
+        }
+      }
+
+      return;
+    }
+
+    if (typeof value === "object") {
+      if (seen.has(value)) return;
+      seen.add(value);
+
+      if (Array.isArray(value)) {
+        value.forEach(visit);
+      } else {
+        Object.values(value).forEach(visit);
+      }
+    }
+  };
+
+  visit(config);
+  return validationErrors;
+}
+
+/**
+ * Validates that all models in the YAML config use only local Ollama providers.
+ * This is a security check to ensure the Secure Continue build only allows local model execution.
+ *
+ * @param config The YAML configuration containing model definitions to validate
+ * @returns Array of ConfigValidationError for any models that don't use local ollama providers
+ */
+function validateOnlyLocalModels(
+  config: AssistantUnrolled,
+): ConfigValidationError[] {
+  const errs: ConfigValidationError[] = [];
+
+  for (const model of config.models ?? []) {
+    if (!model) continue;
+
+    // provider: ollama is allowed
+    if (typeof model.provider === "string") {
+      if (model.provider !== "ollama") {
+        errs.push({
+          fatal: true,
+          message: `Secure Continue build: external model provider not allowed: ${model.provider}`,
+        });
+      }
+    } else {
+      errs.push({
+        fatal: true,
+        message: `Secure Continue build: model definition must use local ollama provider`,
+      });
+    }
+  }
+
+  return errs;
 }

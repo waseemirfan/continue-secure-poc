@@ -1,3 +1,4 @@
+import { hardenGlobals } from "core/network/networkGate";
 import { getContinueRcPath, getTsConfigPath } from "core/util/paths";
 import { Telemetry } from "core/util/posthog";
 import * as vscode from "vscode";
@@ -8,6 +9,8 @@ import { getExtensionVersion, isUnsupportedPlatform } from "../util/util";
 import { GlobalContext } from "core/util/GlobalContext";
 import { VsCodeContinueApi } from "./api";
 import setupInlineTips from "./InlineTipManager";
+
+hardenGlobals();
 
 export async function activateExtension(context: vscode.ExtensionContext) {
   const platformCheck = isUnsupportedPlatform();
