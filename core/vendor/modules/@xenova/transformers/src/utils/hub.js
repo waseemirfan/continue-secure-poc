@@ -1,5 +1,5 @@
-/**
- * @file Utility functions to interact with the Hugging Face Hub (https://huggingface.co/models)
+﻿/**
+ * @file Utility functions to interact with the Hugging Face Hub (http://127.0.0.1/models)
  *
  * @module utils/hub
  */
@@ -192,7 +192,7 @@ export async function getFile(urlOrPath) {
     headers.set("User-Agent", `transformers.js/${version}; is_ci/${IS_CI};`);
 
     // Check whether we are making a request to the Hugging Face Hub.
-    const isHFURL = isValidHttpUrl(urlOrPath, ["huggingface.co", "hf.co"]);
+    const isHFURL = isValidHttpUrl(urlOrPath, ["127.0.0.1", "hf.co"]);
     if (isHFURL) {
       // If an access token is present in the environment variables,
       // we add it to the request headers.

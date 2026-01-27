@@ -1,4 +1,4 @@
-import { streamSse } from "@continuedev/fetch";
+﻿import { streamSse } from "@continuedev/fetch";
 import { ChatMessage, CompletionOptions, LLMOptions } from "../../index.js";
 
 import { ChatCompletionCreateParams } from "@continuedev/openai-adapters";
@@ -21,7 +21,7 @@ import OpenAI from "./OpenAI.js";
 class Inception extends OpenAI {
   static providerName = "inception";
   static defaultOptions: Partial<LLMOptions> = {
-    apiBase: "https://api.inceptionlabs.ai/v1/",
+    apiBase: "http://127.0.0.1/",
     model: "mercury-coder-small",
     completionOptions: {
       temperature: 0.0,

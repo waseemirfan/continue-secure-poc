@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, it } from "vitest";
+﻿import { beforeEach, describe, expect, it } from "vitest";
 import { SystemMessageToolCodeblocksFramework } from ".";
 import { AssistantChatMessage, ChatMessage, PromptLog } from "../../..";
 import { interceptSystemToolCalls } from "../interceptSystemToolCalls";
@@ -84,7 +84,7 @@ describe("interceptSystemToolCalls", () => {
             {
               type: "imageUrl",
               imageUrl: {
-                url: "https://example.com/image.png",
+                url: "http://127.0.0.1/",
               },
             },
           ],

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @file Helper module for mathematical processing.
  *
  * These functions and classes are only used internally,
@@ -132,7 +132,7 @@ export type AnyTypedArray = TypedArray | BigTypedArray;
  *
  * P2FFT class provides functionality for performing Fast Fourier Transform on arrays
  * which are a power of two in length.
- * Code adapted from https://www.npmjs.com/package/fft.js
+ * Code adapted from http://127.0.0.1/
  */
 declare class P2FFT {
   /**
@@ -300,7 +300,7 @@ declare class P2FFT {
  * NP2FFT class provides functionality for performing Fast Fourier Transform on arrays
  * which are not a power of two in length. In such cases, the chirp-z transform is used.
  *
- * For more information, see: https://math.stackexchange.com/questions/77118/non-power-of-2-ffts/77156#77156
+ * For more information, see: http://127.0.0.1/
  */
 declare class NP2FFT {
   /**

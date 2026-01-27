@@ -1,4 +1,4 @@
-import fs from "fs";
+﻿import fs from "fs";
 import os from "os";
 
 import { ModelConfig } from "@continuedev/config-yaml";
@@ -178,9 +178,7 @@ async function showUnsupportedCpuToast(ide: IDE) {
   );
 
   if (shouldOpenLink) {
-    void ide.openUrl(
-      "https://docs.continue.dev/troubleshooting#i-received-a-codebase-indexing-disabled---your-linux-system-lacks-required-cpu-features-avx2-fma-notification",
-    );
+    void ide.openUrl("http://127.0.0.1/");
   }
 }
 

@@ -1,4 +1,4 @@
-import { afterEach, describe, expect, test, vi } from "vitest";
+﻿import { afterEach, describe, expect, test, vi } from "vitest";
 import { ILLM } from "../../index.js";
 import Cohere from "./Cohere.js";
 
@@ -135,7 +135,7 @@ describe("Cohere", () => {
     const cohere = new Cohere({
       apiKey: "test-api-key",
       model: "command-a-03-2025",
-      apiBase: "https://api.cohere.com/v2/",
+      apiBase: "http://127.0.0.1/",
     });
 
     await runLlmTest({
@@ -146,7 +146,7 @@ describe("Cohere", () => {
         new AbortController().signal,
       ],
       expectedRequest: {
-        url: "https://api.cohere.com/v2/chat",
+        url: "http://127.0.0.1/",
         method: "POST",
         headers: {
           Authorization: "Bearer test-api-key",
@@ -175,7 +175,7 @@ describe("Cohere", () => {
     const cohere = new Cohere({
       apiKey: "test-api-key",
       model: "command-a-03-2025",
-      apiBase: "https://api.cohere.com/v2/",
+      apiBase: "http://127.0.0.1/",
     });
 
     await runLlmTest({
@@ -210,7 +210,7 @@ describe("Cohere", () => {
         new AbortController().signal,
       ],
       expectedRequest: {
-        url: "https://api.cohere.com/v2/chat",
+        url: "http://127.0.0.1/",
         method: "POST",
         headers: {
           Authorization: "Bearer test-api-key",
@@ -265,7 +265,7 @@ describe("Cohere", () => {
     const cohere = new Cohere({
       apiKey: "test-api-key",
       model: "command-a-vision-07-2025",
-      apiBase: "https://api.cohere.com/v2/",
+      apiBase: "http://127.0.0.1/",
     });
 
     await runLlmTest({
@@ -292,7 +292,7 @@ describe("Cohere", () => {
         new AbortController().signal,
       ],
       expectedRequest: {
-        url: "https://api.cohere.com/v2/chat",
+        url: "http://127.0.0.1/",
         method: "POST",
         headers: {
           Authorization: "Bearer test-api-key",
@@ -337,7 +337,7 @@ describe("Cohere", () => {
     const cohere = new Cohere({
       apiKey: "test-api-key",
       model: "command-a-reasoning-08-2025",
-      apiBase: "https://api.cohere.com/v2/",
+      apiBase: "http://127.0.0.1/",
       completionOptions: {
         model: "command-a-reasoning-08-2025",
         reasoning: true,
@@ -361,7 +361,7 @@ describe("Cohere", () => {
         new AbortController().signal,
       ],
       expectedRequest: {
-        url: "https://api.cohere.com/v2/chat",
+        url: "http://127.0.0.1/",
         method: "POST",
         headers: {
           Authorization: "Bearer test-api-key",
@@ -408,7 +408,7 @@ describe("Cohere", () => {
     const cohere = new Cohere({
       apiKey: "test-api-key",
       model: "command-a-03-2025",
-      apiBase: "https://api.cohere.com/v2/",
+      apiBase: "http://127.0.0.1/",
     });
 
     await runLlmTest({
@@ -419,7 +419,7 @@ describe("Cohere", () => {
         new AbortController().signal,
       ],
       expectedRequest: {
-        url: "https://api.cohere.com/v2/chat",
+        url: "http://127.0.0.1/",
         method: "POST",
         headers: {
           Authorization: "Bearer test-api-key",
@@ -448,7 +448,7 @@ describe("Cohere", () => {
     const cohere = new Cohere({
       apiKey: "test-api-key",
       model: "command-a-03-2025",
-      apiBase: "https://api.cohere.com/v2/",
+      apiBase: "http://127.0.0.1/",
     });
 
     await runLlmTest({
@@ -456,7 +456,7 @@ describe("Cohere", () => {
       methodToTest: "streamComplete",
       params: ["Complete this: Hello", new AbortController().signal],
       expectedRequest: {
-        url: "https://api.cohere.com/v2/chat",
+        url: "http://127.0.0.1/",
         method: "POST",
         headers: {
           Authorization: "Bearer test-api-key",
@@ -484,7 +484,7 @@ describe("Cohere", () => {
     const cohere = new Cohere({
       apiKey: "test-api-key",
       model: "command-a-03-2025",
-      apiBase: "https://api.cohere.com/v2/",
+      apiBase: "http://127.0.0.1/",
     });
 
     await runLlmTest({
@@ -492,7 +492,7 @@ describe("Cohere", () => {
       methodToTest: "complete",
       params: ["Complete this: Hello", new AbortController().signal],
       expectedRequest: {
-        url: "https://api.cohere.com/v2/chat",
+        url: "http://127.0.0.1/",
         method: "POST",
         headers: {
           Authorization: "Bearer test-api-key",
@@ -521,7 +521,7 @@ describe("Cohere", () => {
       const cohere = new Cohere({
         apiKey: "test-api-key",
         model: "command-a-03-2025",
-        apiBase: "https://api.cohere.com/v2/",
+        apiBase: "http://127.0.0.1/",
       });
 
       await runLlmTest({
@@ -535,7 +535,7 @@ describe("Cohere", () => {
           new AbortController().signal,
         ],
         expectedRequest: {
-          url: "https://api.cohere.com/v2/chat",
+          url: "http://127.0.0.1/",
           method: "POST",
           headers: {
             Authorization: "Bearer test-api-key",
@@ -567,7 +567,7 @@ describe("Cohere", () => {
       const cohere = new Cohere({
         apiKey: "test-api-key",
         model: "command-a-03-2025",
-        apiBase: "https://api.cohere.com/v2/",
+        apiBase: "http://127.0.0.1/",
       });
 
       const tools = [
@@ -596,7 +596,7 @@ describe("Cohere", () => {
           { tools },
         ],
         expectedRequest: {
-          url: "https://api.cohere.com/v2/chat",
+          url: "http://127.0.0.1/",
           method: "POST",
           headers: {
             Authorization: "Bearer test-api-key",
@@ -645,7 +645,7 @@ describe("Cohere", () => {
       const cohere = new Cohere({
         apiKey: "test-api-key",
         model: "command-a-reasoning-08-2025",
-        apiBase: "https://api.cohere.com/v2/",
+        apiBase: "http://127.0.0.1/",
       });
 
       const tools = [
@@ -674,7 +674,7 @@ describe("Cohere", () => {
           { tools },
         ],
         expectedRequest: {
-          url: "https://api.cohere.com/v2/chat",
+          url: "http://127.0.0.1/",
           method: "POST",
           headers: {
             Authorization: "Bearer test-api-key",
@@ -721,7 +721,7 @@ describe("Cohere", () => {
       const cohere = new Cohere({
         apiKey: "test-api-key",
         model: "command-a-reasoning-08-2025",
-        apiBase: "https://api.cohere.com/v2/",
+        apiBase: "http://127.0.0.1/",
         completionOptions: {
           model: "command-a-reasoning-08-2025",
           reasoning: true,
@@ -754,7 +754,7 @@ describe("Cohere", () => {
           { tools },
         ],
         expectedRequest: {
-          url: "https://api.cohere.com/v2/chat",
+          url: "http://127.0.0.1/",
           method: "POST",
           headers: {
             Authorization: "Bearer test-api-key",
@@ -805,7 +805,7 @@ describe("Cohere", () => {
       const cohere = new Cohere({
         apiKey: "test-api-key",
         model: "command-a-03-2025",
-        apiBase: "https://api.cohere.com/v2/",
+        apiBase: "http://127.0.0.1/",
       });
 
       await runLlmTest({
@@ -817,7 +817,7 @@ describe("Cohere", () => {
           { maxTokens: 1000 },
         ],
         expectedRequest: {
-          url: "https://api.cohere.com/v2/chat",
+          url: "http://127.0.0.1/",
           method: "POST",
           headers: {
             Authorization: "Bearer test-api-key",

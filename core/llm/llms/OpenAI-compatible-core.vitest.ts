@@ -1,4 +1,4 @@
-import { createOpenAISubclassTests } from "./test-utils/openai-test-utils.js";
+﻿import { createOpenAISubclassTests } from "./test-utils/openai-test-utils.js";
 
 // Import core OpenAI-compatible providers
 import OpenAI from "./OpenAI.js";
@@ -155,7 +155,7 @@ describe("OpenAI", () => {
     const openai = new OpenAI({
       apiKey: "test-api-key",
       model: "gpt-4",
-      apiBase: "https://api.openai.com/v1/",
+      apiBase: "http://127.0.0.1/",
     });
 
     await runLlmTest({
@@ -166,7 +166,7 @@ describe("OpenAI", () => {
         new AbortController().signal,
       ],
       expectedRequest: {
-        url: "https://api.openai.com/v1/chat/completions",
+        url: "http://127.0.0.1/",
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -191,7 +191,7 @@ describe("OpenAI", () => {
 // Core OpenAI-compatible providers
 createOpenAISubclassTests(Groq, {
   providerName: "groq",
-  defaultApiBase: "https://api.groq.com/openai/v1/",
+  defaultApiBase: "http://127.0.0.1/",
   modelConversions: {
     "mistral-8x7b": "mistral-8x7b",
     "llama3-8b": "llama3-8b-8192",
@@ -202,7 +202,7 @@ createOpenAISubclassTests(Groq, {
 
 createOpenAISubclassTests(Fireworks, {
   providerName: "fireworks",
-  defaultApiBase: "https://api.fireworks.ai/inference/v1/",
+  defaultApiBase: "http://127.0.0.1/",
   modelConversions: {
     "starcoder-7b": "starcoder-7b",
   },
@@ -212,7 +212,7 @@ createOpenAISubclassTests(Fireworks, {
 
 createOpenAISubclassTests(Together, {
   providerName: "together",
-  defaultApiBase: "https://api.together.xyz/v1/",
+  defaultApiBase: "http://127.0.0.1/",
   modelConversions: {
     "codellama-7b": "codellama-7b",
     "llama3-8b": "meta-llama/Llama-3-8b-chat-hf",
@@ -223,17 +223,17 @@ createOpenAISubclassTests(Together, {
 
 createOpenAISubclassTests(Deepseek, {
   providerName: "deepseek",
-  defaultApiBase: "https://api.deepseek.com/",
+  defaultApiBase: "http://127.0.0.1/",
 });
 
 createOpenAISubclassTests(OpenRouter, {
   providerName: "openrouter",
-  defaultApiBase: "https://openrouter.ai/api/v1/",
+  defaultApiBase: "http://127.0.0.1/",
 });
 
 createOpenAISubclassTests(xAI, {
   providerName: "xAI",
-  defaultApiBase: "https://api.x.ai/v1/",
+  defaultApiBase: "http://127.0.0.1/",
   modelConversions: {
     "grok-beta": "grok-beta",
   },
@@ -242,7 +242,7 @@ createOpenAISubclassTests(xAI, {
 
 createOpenAISubclassTests(Mistral, {
   providerName: "mistral",
-  defaultApiBase: "https://api.mistral.ai/v1/",
+  defaultApiBase: "http://127.0.0.1/",
   modelConversions: {
     "mistral-7b": "mistral-7b",
     "mistral-8x7b": "open-mixtral-8x7b",
@@ -252,12 +252,12 @@ createOpenAISubclassTests(Mistral, {
 
 createOpenAISubclassTests(LMStudio, {
   providerName: "lmstudio",
-  defaultApiBase: "http://localhost:1234/v1/",
+  defaultApiBase: "http://127.0.0.1/",
 });
 
 createOpenAISubclassTests(Cerebras, {
   providerName: "cerebras",
-  defaultApiBase: "https://api.cerebras.ai/v1/",
+  defaultApiBase: "http://127.0.0.1/",
   modelConversions: {
     "llama3.1-8b": "llama3.1-8b",
     "llama3.1-70b": "llama3.1-70b",
@@ -268,9 +268,8 @@ createOpenAISubclassTests(Cerebras, {
 
 createOpenAISubclassTests(DeepInfra, {
   providerName: "deepinfra",
-  defaultApiBase: "https://api.deepinfra.com/v1/openai/",
-  customEmbeddingsUrl:
-    "https://api.deepinfra.com/v1/inference/text-embedding-ada-002",
+  defaultApiBase: "http://127.0.0.1/",
+  customEmbeddingsUrl: "http://127.0.0.1/",
   customEmbeddingsHeaders: {
     Authorization: "bearer test-api-key",
   },
@@ -281,7 +280,7 @@ createOpenAISubclassTests(DeepInfra, {
 
 createOpenAISubclassTests(Nvidia, {
   providerName: "nvidia",
-  defaultApiBase: "https://integrate.api.nvidia.com/v1/",
+  defaultApiBase: "http://127.0.0.1/",
   customEmbeddingsHeaders: {
     Authorization: "Bearer test-api-key",
     "Content-Type": "application/json",
@@ -296,7 +295,7 @@ createOpenAISubclassTests(Nvidia, {
 
 createOpenAISubclassTests(CometAPI, {
   providerName: "cometapi",
-  defaultApiBase: "https://api.cometapi.com/v1/",
+  defaultApiBase: "http://127.0.0.1/",
   modelConversions: {
     "gpt-5-mini": "gpt-5-mini",
     "claude-4-sonnet": "claude-sonnet-4-20250514",

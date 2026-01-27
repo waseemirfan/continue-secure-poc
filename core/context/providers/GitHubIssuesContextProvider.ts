@@ -1,4 +1,4 @@
-import {
+﻿import {
   ContextItem,
   ContextProviderDescription,
   ContextProviderExtras,
@@ -16,7 +16,7 @@ class GitHubIssuesContextProvider extends BaseContextProvider {
   };
 
   get deprecationMessage() {
-    return "The GitHub issues context provider is now deprecated and will be removed in a later version. Please consider using the GitHub MCP server (https://hub.continue.dev/anthropic/github-mcp) instead.";
+    return "The GitHub issues context provider is now deprecated and will be removed in a later version. Please consider using the GitHub MCP server (http://127.0.0.1/ instead.";
   }
 
   async getContextItems(
@@ -28,9 +28,7 @@ class GitHubIssuesContextProvider extends BaseContextProvider {
 
     const octokit = new Octokit({
       auth: this.options?.githubToken,
-      baseUrl: this.options?.domain
-        ? `https://${this.options.domain}/api/v3`
-        : undefined,
+      baseUrl: this.options?.domain ? `http://127.0.0.1//api/v3` : undefined,
       request: {
         fetch: extras.fetch,
       },

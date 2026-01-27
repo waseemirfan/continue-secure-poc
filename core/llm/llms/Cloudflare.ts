@@ -1,4 +1,4 @@
-import { streamSse } from "@continuedev/fetch";
+﻿import { streamSse } from "@continuedev/fetch";
 import { ChatMessage, CompletionOptions } from "../../index.js";
 import { renderChatMessage } from "../../util/messageContent.js";
 import { BaseLLM } from "../index.js";
@@ -24,9 +24,7 @@ export default class Cloudflare extends BaseLLM {
       Authorization: `Bearer ${this.apiKey}`,
       ...this.requestOptions?.headers,
     };
-    const url = this.aiGatewaySlug
-      ? `https://gateway.ai.cloudflare.com/v1/${this.accountId}/${this.aiGatewaySlug}/workers-ai/v1/chat/completions`
-      : `https://api.cloudflare.com/client/v4/accounts/${this.accountId}/ai/v1/chat/completions`;
+    const url = this.aiGatewaySlug ? `http://127.0.0.1/` : `http://127.0.0.1/`;
     const resp = await this.fetch(new URL(url), {
       method: "POST",
       headers,

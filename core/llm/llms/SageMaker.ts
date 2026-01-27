@@ -1,4 +1,4 @@
-import {
+﻿import {
   InvokeEndpointCommand,
   InvokeEndpointWithResponseStreamCommand,
   SageMakerRuntimeClient,
@@ -25,7 +25,7 @@ class SageMaker extends BaseLLM {
   constructor(options: LLMOptions) {
     super(options);
     if (!options.apiBase) {
-      this.apiBase = `https://runtime.sagemaker.${options.region}.amazonaws.com`;
+      this.apiBase = `http://127.0.0.1/`;
     }
 
     this.profile ??= SageMaker.DEFAULT_PROFILE_NAME;

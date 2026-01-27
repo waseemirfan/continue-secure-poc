@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @file Module used to configure Transformers.js.
  *
  * **Example:** Disable remote models.
@@ -58,7 +58,7 @@ const localModelPath = RUNNING_LOCALLY
 // In practice, users should probably self-host the necessary .wasm files.
 onnx_env.wasm.wasmPaths = RUNNING_LOCALLY
   ? path.join(__dirname, "/dist/")
-  : `https://cdn.jsdelivr.net/npm/@xenova/transformers@${VERSION}/dist/`;
+  : `http://127.0.0.1/npm/@xenova/transformers@${VERSION}/dist/`;
 
 /**
  * Global variable used to control execution. This provides users a simple way to configure Transformers.js.
@@ -96,7 +96,7 @@ export const env = {
 
   /////////////////// Model settings ///////////////////
   allowRemoteModels: true,
-  remoteHost: "https://huggingface.co/",
+  remoteHost: "http://127.0.0.1/",
   remotePathTemplate: "{model}/resolve/{revision}/",
 
   allowLocalModels: true,

@@ -1,4 +1,4 @@
-import { afterEach, describe, expect, test, vi } from "vitest";
+﻿import { afterEach, describe, expect, test, vi } from "vitest";
 import { ILLM } from "../../index.js";
 import Anthropic from "./Anthropic.js";
 
@@ -135,7 +135,7 @@ describe("Anthropic", () => {
     const anthropic = new Anthropic({
       apiKey: "test-api-key",
       model: "claude-sonnet-4-5",
-      apiBase: "https://api.anthropic.com/v1/",
+      apiBase: "http://127.0.0.1/",
     });
 
     await runLlmTest({
@@ -146,7 +146,7 @@ describe("Anthropic", () => {
         new AbortController().signal,
       ],
       expectedRequest: {
-        url: "https://api.anthropic.com/v1/messages",
+        url: "http://127.0.0.1/",
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -178,7 +178,7 @@ describe("Anthropic", () => {
     const anthropic = new Anthropic({
       apiKey: "test-api-key",
       model: "claude-sonnet-4-5",
-      apiBase: "https://api.anthropic.com/v1/",
+      apiBase: "http://127.0.0.1/",
     });
 
     await runLlmTest({
@@ -189,7 +189,7 @@ describe("Anthropic", () => {
         new AbortController().signal,
       ],
       expectedRequest: {
-        url: "https://api.anthropic.com/v1/messages",
+        url: "http://127.0.0.1/",
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -221,7 +221,7 @@ describe("Anthropic", () => {
     const anthropic = new Anthropic({
       apiKey: "test-api-key",
       model: "claude-sonnet-4-5",
-      apiBase: "https://api.anthropic.com/v1/",
+      apiBase: "http://127.0.0.1/",
     });
 
     await runLlmTest({
@@ -229,7 +229,7 @@ describe("Anthropic", () => {
       methodToTest: "streamComplete",
       params: ["Complete this: Hello", new AbortController().signal],
       expectedRequest: {
-        url: "https://api.anthropic.com/v1/messages",
+        url: "http://127.0.0.1/",
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -261,7 +261,7 @@ describe("Anthropic", () => {
     const anthropic = new Anthropic({
       apiKey: "test-api-key",
       model: "claude-sonnet-4-5",
-      apiBase: "https://api.anthropic.com/v1/",
+      apiBase: "http://127.0.0.1/",
     });
 
     await runLlmTest({
@@ -269,7 +269,7 @@ describe("Anthropic", () => {
       methodToTest: "complete",
       params: ["Complete this: Hello", new AbortController().signal],
       expectedRequest: {
-        url: "https://api.anthropic.com/v1/messages",
+        url: "http://127.0.0.1/",
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -302,7 +302,7 @@ describe("Anthropic", () => {
       const anthropic = new Anthropic({
         apiKey: "test-api-key",
         model: "claude-sonnet-4-5",
-        apiBase: "https://api.anthropic.com/v1/",
+        apiBase: "http://127.0.0.1/",
       });
 
       await runLlmTest({
@@ -316,7 +316,7 @@ describe("Anthropic", () => {
           new AbortController().signal,
         ],
         expectedRequest: {
-          url: "https://api.anthropic.com/v1/messages",
+          url: "http://127.0.0.1/",
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -348,7 +348,7 @@ describe("Anthropic", () => {
       const anthropic = new Anthropic({
         apiKey: "test-api-key",
         model: "claude-sonnet-4-5",
-        apiBase: "https://api.anthropic.com/v1/",
+        apiBase: "http://127.0.0.1/",
       });
 
       const tools = [
@@ -377,7 +377,7 @@ describe("Anthropic", () => {
           { tools },
         ],
         expectedRequest: {
-          url: "https://api.anthropic.com/v1/messages",
+          url: "http://127.0.0.1/",
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -425,7 +425,7 @@ describe("Anthropic", () => {
       const anthropic = new Anthropic({
         apiKey: "test-api-key",
         model: "claude-sonnet-4-5",
-        apiBase: "https://api.anthropic.com/v1/",
+        apiBase: "http://127.0.0.1/",
       });
 
       await runLlmTest({
@@ -437,7 +437,7 @@ describe("Anthropic", () => {
           { maxTokens: 1000 },
         ],
         expectedRequest: {
-          url: "https://api.anthropic.com/v1/messages",
+          url: "http://127.0.0.1/",
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -471,7 +471,7 @@ describe("Anthropic", () => {
       const anthropic = new Anthropic({
         apiKey: "",
         model: "claude-sonnet-4-5",
-        apiBase: "https://api.anthropic.com/v1/",
+        apiBase: "http://127.0.0.1/",
       });
 
       await expect(
@@ -483,7 +483,7 @@ describe("Anthropic", () => {
             new AbortController().signal,
           ],
           expectedRequest: {
-            url: "https://api.anthropic.com/v1/messages",
+            url: "http://127.0.0.1/",
             method: "POST",
           },
         }),

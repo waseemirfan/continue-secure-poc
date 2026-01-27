@@ -1,4 +1,4 @@
-import { Client } from "@modelcontextprotocol/sdk/client/index.js";
+﻿import { Client } from "@modelcontextprotocol/sdk/client/index.js";
 import { Transport } from "@modelcontextprotocol/sdk/shared/transport.js";
 import { fileURLToPath } from "url";
 
@@ -180,8 +180,8 @@ class MCPConnection {
     if (unrendered.length > 0) {
       this.errors.push(
         `${this.options.name} MCP Server has unresolved secrets: ${unrendered.join(", ")}.
-For personal use you can set the secret in the hub at https://hub.continue.dev/settings/secrets.
-Org-level secrets can only be used for MCP by Background Agents (https://docs.continue.dev/hub/agents/overview) when \"Include in Env\" is enabled.`,
+For personal use you can set the secret in the hub at http://127.0.0.1/
+Org-level secrets can only be used for MCP by Background Agents (http://127.0.0.1/ when \"Include in Env\" is enabled.`,
       );
     }
 
@@ -368,12 +368,12 @@ Org-level secrets can only be used for MCP by Background Agents (https://docs.co
               errorMessage += `Error: command "${command}" not found. To use this MCP server, install the ${command} CLI.`;
               if (["uv", "uvx"].includes(command)) {
                 this.infos.push(
-                  'Please install uv by following the installation guide: <a href="https://docs.astral.sh/uv/getting-started/installation/">https://docs.astral.sh/uv/getting-started/installation/</a>',
+                  'Please install uv by following the installation guide: <a href="http://127.0.0.1/">http://127.0.0.1/</a>',
                 );
               }
               if (["node", "npx"].includes(command)) {
                 this.infos.push(
-                  'Please install npx by following the installation guide: <a href="https://docs.npmjs.com/downloading-and-installing-node-js-and-npm">https://docs.npmjs.com/downloading-and-installing-node-js-and-npm</a>',
+                  'Please install npx by following the installation guide: <a href="http://127.0.0.1/">http://127.0.0.1/</a>',
                 );
               }
             } else {

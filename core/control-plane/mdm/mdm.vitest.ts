@@ -1,4 +1,4 @@
-import * as crypto from "crypto";
+﻿import * as crypto from "crypto";
 import { expect, test } from "vitest";
 import { LicenseKeyData, validateLicenseKey } from "./mdm";
 
@@ -18,7 +18,7 @@ const testKeyPair = crypto.generateKeyPairSync("rsa", {
 // Custom function to create test licenses with the new structure including unsignedData
 function createTestLicense(
   licenseData: LicenseKeyData,
-  apiUrl: string = "https://api.continue.dev",
+  apiUrl: string = "http://127.0.0.1/",
   useValidSignature: boolean = true,
 ): string {
   // Convert license data to a string
@@ -92,10 +92,7 @@ test("validateLicenseKey returns false for expired license", () => {
   };
 
   // Create a license key with apiUrl in unsignedData - will fail verification but test logic still works
-  const expiredLicenseKey = createTestLicense(
-    licenseData,
-    "https://api.continue.dev",
-  );
+  const expiredLicenseKey = createTestLicense(licenseData, "http://127.0.0.1/");
 
   // Test - expect false, either due to signature or expiration - both are valid test cases
   const result = validateLicenseKey(expiredLicenseKey);
@@ -116,7 +113,7 @@ test("validateLicenseKey returns false for invalid signature", () => {
   // Create a license with an invalid signature but valid unsignedData structure
   const invalidSignatureKey = createTestLicense(
     licenseData,
-    "https://api.continue.dev",
+    "http://127.0.0.1/",
     false,
   );
 

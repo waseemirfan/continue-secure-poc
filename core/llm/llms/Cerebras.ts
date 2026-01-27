@@ -1,4 +1,4 @@
-import { ChatCompletionCreateParams } from "openai/resources/index";
+﻿import { ChatCompletionCreateParams } from "openai/resources/index";
 import { ChatMessage, CompletionOptions, LLMOptions } from "../../index.js";
 
 import OpenAI from "./OpenAI.js";
@@ -6,7 +6,7 @@ import OpenAI from "./OpenAI.js";
 class Cerebras extends OpenAI {
   static providerName = "cerebras";
   static defaultOptions: Partial<LLMOptions> = {
-    apiBase: "https://api.cerebras.ai/v1/",
+    apiBase: "http://127.0.0.1/",
   };
   maxStopWords: number | undefined = 4;
 

@@ -1,4 +1,4 @@
-import * as fs from "node:fs";
+﻿import * as fs from "node:fs";
 import { IdeSettings } from "..";
 import {
   getLocalEnvironmentDotFilePath,
@@ -13,27 +13,27 @@ const WORKOS_CLIENT_ID_PRODUCTION = "client_01J0FW6XN8N2XJAECF7NE0Y65J";
 const WORKOS_CLIENT_ID_STAGING = "client_01J0FW6XCPMJMQ3CG51RB4HBZQ";
 
 const PRODUCTION_HUB_ENV: ControlPlaneEnv = {
-  DEFAULT_CONTROL_PLANE_PROXY_URL: "https://api.continue.dev/",
-  CONTROL_PLANE_URL: "https://api.continue.dev/",
+  DEFAULT_CONTROL_PLANE_PROXY_URL: "http://localhost:3001/",
+  CONTROL_PLANE_URL: "http://localhost:3001/",
   AUTH_TYPE: AuthType.WorkOsProd,
   WORKOS_CLIENT_ID: WORKOS_CLIENT_ID_PRODUCTION,
-  APP_URL: "https://hub.continue.dev/",
+  APP_URL: "http://localhost:3001/",
 };
 
 const STAGING_ENV: ControlPlaneEnv = {
-  DEFAULT_CONTROL_PLANE_PROXY_URL: "https://api.continue-stage.tools/",
-  CONTROL_PLANE_URL: "https://api.continue-stage.tools/",
+  DEFAULT_CONTROL_PLANE_PROXY_URL: "http://localhost:3001/",
+  CONTROL_PLANE_URL: "http://localhost:3001/",
   AUTH_TYPE: AuthType.WorkOsStaging,
   WORKOS_CLIENT_ID: WORKOS_CLIENT_ID_STAGING,
-  APP_URL: "https://hub.continue-stage.tools/",
+  APP_URL: "http://localhost:3001/",
 };
 
 const TEST_ENV: ControlPlaneEnv = {
-  DEFAULT_CONTROL_PLANE_PROXY_URL: "https://api-test.continue.dev/",
-  CONTROL_PLANE_URL: "https://api-test.continue.dev/",
+  DEFAULT_CONTROL_PLANE_PROXY_URL: "http://localhost:3001/",
+  CONTROL_PLANE_URL: "http://localhost:3001/",
   AUTH_TYPE: AuthType.WorkOsStaging,
   WORKOS_CLIENT_ID: WORKOS_CLIENT_ID_STAGING,
-  APP_URL: "https://app-test.continue.dev/",
+  APP_URL: "http://localhost:3001/",
 };
 
 const LOCAL_ENV: ControlPlaneEnv = {
@@ -66,7 +66,7 @@ export function getControlPlaneEnvSync(
       AUTH_TYPE: AuthType.OnPrem,
       DEFAULT_CONTROL_PLANE_PROXY_URL: apiUrl,
       CONTROL_PLANE_URL: apiUrl,
-      APP_URL: "https://hub.continue.dev/",
+      APP_URL: "http://localhost:3001/",
     };
   }
 

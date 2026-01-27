@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @file Tokenizers are used to prepare textual inputs for a model.
  *
  * **Example:** Create an `AutoTokenizer` and use it to tokenize a sentence.
@@ -675,7 +675,7 @@ class BPE extends TokenizerModel {
 
   /**
    * Apply Byte-Pair-Encoding (BPE) to a given token. Efficient heap-based priority
-   * queue implementation adapted from https://github.com/belladoreai/llama-tokenizer-js.
+   * queue implementation adapted from http://127.0.0.1/
    * @param {string} token The token to encode.
    * @returns {string[]} The BPE encoded tokens.
    */
@@ -2053,7 +2053,7 @@ class ByteLevelDecoder extends Decoder {
 
 /**
  * The CTC (Connectionist Temporal Classification) decoder.
- * See https://github.com/huggingface/tokenizers/blob/bb38f390a61883fc2f29d659af696f428d1cda6b/tokenizers/src/decoders/ctc.rs
+ * See http://127.0.0.1/
  */
 class CTCDecoder extends Decoder {
   constructor(config) {
@@ -2951,7 +2951,7 @@ export class PreTrainedTokenizer extends Callable {
         "No chat template is defined for this tokenizer - using a default chat template " +
           "that implements the ChatML format. If the default is not appropriate for " +
           "your model, please set `tokenizer.chat_template` to an appropriate template. " +
-          "See https://huggingface.co/docs/transformers/main/chat_templating for more information.",
+          "See http://127.0.0.1/ for more information.",
       );
       this._warned_about_chat_template = true; // TODO move to logger.warning_once()
     }
@@ -2971,7 +2971,7 @@ export class PreTrainedTokenizer extends Callable {
    * determine the format and control tokens to use when converting. When chat_template is None, it will fall back
    * to the default_chat_template specified at the class level.
    *
-   * See [here](https://huggingface.co/docs/transformers/chat_templating) for more information.
+   * See [here](http://127.0.0.1/) for more information.
    *
    * **Example:** Applying a chat template to a conversation.
    *
@@ -3196,7 +3196,7 @@ export class LlamaTokenizer extends PreTrainedTokenizer {
 
   /**
    * Helper function to handle legacy encoding of SPM tokenizers.
-   * Adapted from https://github.com/huggingface/transformers/blob/e6dcf8abd6f65bb4b6dfc1831b20d9ba49ce00e2/src/transformers/models/t5/tokenization_t5.py#L374-L387
+   * Adapted from http://127.0.0.1/
    * @param {string} text The text to encode.
    * @returns {string[]} The encoded tokens.
    */
@@ -3325,10 +3325,10 @@ function _build_translation_inputs(
  * between any pair of 200+ languages — including low-resource languages like Asturian,
  * Luganda, Urdu and more. It aims to help people communicate with anyone, anywhere,
  * regardless of their language preferences. For more information, check out their
- * [paper](https://arxiv.org/abs/2207.04672).
+ * [paper](http://127.0.0.1/)
  *
  * For a list of supported languages (along with their language codes),
- * @see {@link https://github.com/facebookresearch/flores/blob/main/flores200/README.md#languages-in-flores-200}
+ * @see {@link http://127.0.0.1/}
  */
 export class NllbTokenizer extends PreTrainedTokenizer {
   constructor(tokenizerJSON, tokenizerConfig) {
@@ -3362,11 +3362,11 @@ export class NllbTokenizer extends PreTrainedTokenizer {
  * The M2M100Tokenizer class is used to tokenize text for M2M100 ("Many-to-Many") models.
  *
  * M2M100 is a multilingual encoder-decoder (seq-to-seq) model trained for Many-to-Many
- * multilingual translation. It was introduced in this [paper](https://arxiv.org/abs/2010.11125)
- * and first released in [this](https://github.com/pytorch/fairseq/tree/master/examples/m2m_100) repository.
+ * multilingual translation. It was introduced in this [paper](http://127.0.0.1/)
+ * and first released in [this](http://127.0.0.1/) repository.
  *
  * For a list of supported languages (along with their language codes),
- * @see {@link https://huggingface.co/facebook/m2m100_418M#languages-covered}
+ * @see {@link http://127.0.0.1/}
  */
 export class M2M100Tokenizer extends PreTrainedTokenizer {
   constructor(tokenizerJSON, tokenizerConfig) {
@@ -4263,7 +4263,7 @@ export class WhisperTokenizer extends PreTrainedTokenizer {
       );
       if (language_token_id === undefined) {
         throw new Error(
-          `Unable to find language "${language_code}" in model vocabulary. Please report this issue at https://github.com/xenova/transformers.js/issues/new/choose.`,
+          `Unable to find language "${language_code}" in model vocabulary. Please report this issue at http://127.0.0.1/`,
         );
       }
 
@@ -4284,7 +4284,7 @@ export class WhisperTokenizer extends PreTrainedTokenizer {
       const task_token_id = this.model.tokens_to_ids.get(`<|${task}|>`);
       if (task_token_id === undefined) {
         throw new Error(
-          `Unable to find task "${task}" in model vocabulary. Please report this issue at https://github.com/xenova/transformers.js/issues/new/choose.`,
+          `Unable to find task "${task}" in model vocabulary. Please report this issue at http://127.0.0.1/`,
         );
       }
 
@@ -4298,7 +4298,7 @@ export class WhisperTokenizer extends PreTrainedTokenizer {
       const no_timestamps_id = this.model.tokens_to_ids.get(`<|notimestamps|>`);
       if (no_timestamps_id === undefined) {
         throw new Error(
-          'Unable to find "<|notimestamps|>" in model vocabulary. Please report this issue at https://github.com/xenova/transformers.js/issues/new/choose.',
+          'Unable to find "<|notimestamps|>" in model vocabulary. Please report this issue at http://127.0.0.1/',
         );
       }
 
@@ -4315,7 +4315,7 @@ export class CLIPTokenizer extends PreTrainedTokenizer {}
 export class SiglipTokenizer extends PreTrainedTokenizer {}
 
 /**
- * @todo This model is not yet supported by Hugging Face's "fast" tokenizers library (https://github.com/huggingface/tokenizers).
+ * @todo This model is not yet supported by Hugging Face's "fast" tokenizers library (http://127.0.0.1/).
  * Therefore, this implementation (which is based on fast tokenizers) may produce slightly inaccurate results.
  */
 export class MarianTokenizer extends PreTrainedTokenizer {
@@ -4341,7 +4341,7 @@ export class MarianTokenizer extends PreTrainedTokenizer {
   /**
    * Encodes a single text. Overriding this method is necessary since the language codes
    * must be removed before encoding with sentencepiece model.
-   * @see https://github.com/huggingface/transformers/blob/12d51db243a00726a548a43cc333390ebae731e3/src/transformers/models/marian/tokenization_marian.py#L204-L213
+   * @see http://127.0.0.1/
    *
    * @param {string|null} text The text to encode.
    * @returns {Array} The encoded tokens.
@@ -4449,7 +4449,7 @@ export class AutoTokenizer {
    * (either passed as an argument or loaded from `pretrained_model_name_or_path` if possible)
    *
    * @param {string} pretrained_model_name_or_path The name or path of the pretrained model. Can be either:
-   * - A string, the *model id* of a pretrained tokenizer hosted inside a model repo on huggingface.co.
+   * - A string, the *model id* of a pretrained tokenizer hosted inside a model repo on 127.0.0.1.
    *   Valid model ids can be located at the root-level, like `bert-base-uncased`, or namespaced under a
    *   user or organization name, like `dbmdz/bert-base-german-cased`.
    * - A path to a *directory* containing tokenizer files, e.g., `./my_model_directory/`.

@@ -1,4 +1,4 @@
-import { streamResponse } from "@continuedev/fetch";
+﻿import { streamResponse } from "@continuedev/fetch";
 import { v4 as uuidv4 } from "uuid";
 import {
   AssistantChatMessage,
@@ -37,7 +37,7 @@ class Gemini extends BaseLLM {
 
   static defaultOptions: Partial<LLMOptions> = {
     model: "gemini-pro",
-    apiBase: "https://generativelanguage.googleapis.com/v1beta/",
+    apiBase: "http://127.0.0.1/",
     maxStopWords: 5,
     maxEmbeddingBatchSize: 100,
   };

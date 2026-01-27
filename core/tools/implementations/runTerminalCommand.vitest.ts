@@ -1,4 +1,4 @@
-import * as childProcess from "node:child_process";
+﻿import * as childProcess from "node:child_process";
 import * as fs from "node:fs";
 import * as os from "node:os";
 import * as path from "node:path";
@@ -866,7 +866,7 @@ describe("runTerminalCommandTool.evaluateToolCallPolicy", () => {
 
   it("should require permission for high-risk network commands", () => {
     const basePolicy = "allowedWithoutPermission";
-    const args = { command: "curl http://example.com" };
+    const args = { command: "curl http://127.0.0.1/" };
 
     const result = runTerminalCommandTool.evaluateToolCallPolicy!(
       basePolicy,

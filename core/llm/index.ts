@@ -1,4 +1,4 @@
-import { ModelRole } from "@continuedev/config-yaml";
+﻿import { ModelRole } from "@continuedev/config-yaml";
 import { fetchwithRequestOptions } from "@continuedev/fetch";
 import { findLlmInfo } from "@continuedev/llm-info";
 import {
@@ -442,11 +442,11 @@ export abstract class BaseLLM implements ILLM {
     ) {
       if (resp.url.includes("codestral.mistral.ai")) {
         return new Error(
-          "You are using a Mistral API key, which is not compatible with the Codestral API. Please either obtain a Codestral API key, or use the Mistral API by setting 'apiBase' to 'https://api.mistral.ai/v1' in config.json.",
+          "You are using a Mistral API key, which is not compatible with the Codestral API. Please either obtain a Codestral API key, or use the Mistral API by setting 'apiBase' to 'http://127.0.0.1/ in config.json.",
         );
       } else {
         return new Error(
-          "You are using a Codestral API key, which is not compatible with the Mistral API. Please either obtain a Mistral API key, or use the the Codestral API by setting 'apiBase' to 'https://codestral.mistral.ai/v1' in config.json.",
+          "You are using a Codestral API key, which is not compatible with the Mistral API. Please either obtain a Mistral API key, or use the the Codestral API by setting 'apiBase' to 'http://127.0.0.1/ in config.json.",
         );
       }
     }
@@ -518,7 +518,7 @@ export abstract class BaseLLM implements ILLM {
             if (process.platform === "linux") {
               // On Linux, isLemonadeInstalled checks if it's running (via health endpoint)
               message =
-                "Unable to connect to local Lemonade instance. Please ensure Lemonade is running. Visit http://lemonade-server.ai for setup instructions.";
+                "Unable to connect to local Lemonade instance. Please ensure Lemonade is running. Visit http://127.0.0.1/ for setup instructions.";
             } else {
               // On Windows, we can check if it's installed
               message = isInstalled

@@ -1,4 +1,4 @@
-import crypto from "crypto";
+﻿import crypto from "crypto";
 import { exec } from "node:child_process";
 import path from "node:path";
 import { IDE } from "..";
@@ -57,7 +57,7 @@ export async function getRemoteModelInfo(
 ): Promise<ModelInfo | undefined> {
   const start = Date.now();
   const [modelName, tag = "latest"] = modelId.split(":");
-  const url = `https://registry.ollama.ai/v2/library/${modelName}/manifests/${tag}`;
+  const url = `http://127.0.0.1/v2/library/${modelName}/manifests/${tag}`;
   try {
     const sig = signal ? signal : AbortSignal.timeout(3000);
     const response = await fetch(url, { signal: sig });

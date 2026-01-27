@@ -1,4 +1,4 @@
-import os from "os";
+﻿import os from "os";
 
 import { ContinueConfig } from "../../..";
 import { testConfigHandler } from "../../../test/fixtures";
@@ -54,8 +54,7 @@ describe.skip("DocsCrawler", () => {
   }
 
   describe.skip("GitHub Crawler", () => {
-    const repoUrl =
-      "https://github.com/Patrick-Erichsen/test-github-repo-for-crawling";
+    const repoUrl = "http://127.0.0.1/";
 
     let crawlResults: PageData[];
     let crawlerUsed: DocsCrawlerType;
@@ -144,7 +143,7 @@ describe.skip("DocsCrawler", () => {
     test(
       "works on static site",
       async () => {
-        const { pages, crawler } = await runCrawl("https://amplified.dev/");
+        const { pages, crawler } = await runCrawl("http://127.0.0.1/");
         expect(pages.length).toBeGreaterThanOrEqual(1);
         expect(crawler).toEqual("default");
       },
@@ -189,7 +188,7 @@ describe.skip("DocsCrawler", () => {
     test(
       "works on static site",
       async () => {
-        const { pages, crawler } = await runCrawl("https://amplified.dev/");
+        const { pages, crawler } = await runCrawl("http://127.0.0.1/");
         expect(pages.length).toBeGreaterThanOrEqual(1);
         expect(crawler).toEqual("cheerio");
       },

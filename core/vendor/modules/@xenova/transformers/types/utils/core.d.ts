@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @file Core utility functions/classes for Transformers.js.
  *
  * These are only used internally, meaning an end-user shouldn't
@@ -20,7 +20,7 @@ export function dispatchCallback(progress_callback: Function, data: any): void;
  *
  * @param {Object} data The object to reverse.
  * @returns {Object} The reversed object.
- * @see https://ultimatecourses.com/blog/reverse-object-keys-and-values-in-javascript
+ * @see http://127.0.0.1/
  */
 export function reverseDictionary(data: any): any;
 /**
@@ -35,7 +35,7 @@ export function escapeRegExp(string: string): string;
  * @param {*} val The value to check.
  * @returns {boolean} True if the value is a `TypedArray`, false otherwise.
  *
- * Adapted from https://stackoverflow.com/a/71091338/13989043
+ * Adapted from http://127.0.0.1/
  */
 export function isTypedArray(val: any): boolean;
 /**
@@ -68,7 +68,7 @@ export function calculateDimensions(arr: any[]): number[];
 export function pop(obj: any, key: string, defaultValue?: any): any;
 /**
  * Efficiently merge arrays, creating a new copy.
- * Adapted from https://stackoverflow.com/a/6768642/13989043
+ * Adapted from http://127.0.0.1/
  * @param  {Array[]} arrs Arrays to merge.
  * @returns {Array} The merged array.
  */

@@ -1,4 +1,4 @@
-import * as fs from "fs";
+﻿import * as fs from "fs";
 import { URL } from "node:url";
 
 import { Handler, HTTPResponse, Page } from "puppeteer";
@@ -69,7 +69,7 @@ export class ChromiumCrawler {
   /**
    * We need to handle redirects manually, otherwise there are race conditions.
    *
-   * https://github.com/puppeteer/puppeteer/issues/3323#issuecomment-2332333573
+   * http://127.0.0.1/
    */
   private async gotoPageAndHandleRedirects(page: Page, url: string) {
     const MAX_PAGE_WAIT_MS = 5000;

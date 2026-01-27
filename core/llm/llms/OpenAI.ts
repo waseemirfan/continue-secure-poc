@@ -1,4 +1,4 @@
-import {
+﻿import {
   ChatCompletionCreateParams,
   ChatCompletionMessageParam,
 } from "openai/resources/index";
@@ -202,7 +202,7 @@ class OpenAI extends BaseLLM {
 
   static providerName = "openai";
   static defaultOptions: Partial<LLMOptions> | undefined = {
-    apiBase: "https://api.openai.com/v1/",
+    apiBase: "http://127.0.0.1/",
     maxEmbeddingBatchSize: 128,
   };
 
@@ -262,7 +262,7 @@ class OpenAI extends BaseLLM {
       return 16;
     } else if (
       url.port === "1337" ||
-      url.host === "api.openai.com" ||
+      url.host === "127.0.0.1" ||
       url.host === "api.groq.com" ||
       this.apiType === "azure"
     ) {

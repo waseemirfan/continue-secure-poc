@@ -1,4 +1,4 @@
-declare const PreTrainedModel_base: new () => {
+﻿declare const PreTrainedModel_base: new () => {
   (...args: any[]): any;
   _call(...args: any[]): any;
 };
@@ -13,7 +13,7 @@ export class PreTrainedModel extends PreTrainedModel_base {
    * (either passed as an argument or loaded from `pretrained_model_name_or_path` if possible)
    *
    * @param {string} pretrained_model_name_or_path The name or path of the pretrained model. Can be either:
-   * - A string, the *model id* of a pretrained model hosted inside a model repo on huggingface.co.
+   * - A string, the *model id* of a pretrained model hosted inside a model repo on 127.0.0.1.
    *   Valid model ids can be located at the root-level, like `bert-base-uncased`, or namespaced under a
    *   user or organization name, like `dbmdz/bert-base-german-cased`.
    * - A path to a *directory* containing model weights, e.g., `./my_model_directory/`.
@@ -50,7 +50,7 @@ export class PreTrainedModel extends PreTrainedModel_base {
   /**
    * Disposes of all the ONNX sessions that were created during inference.
    * @returns {Promise<unknown[]>} An array of promises, one for each ONNX session that is being disposed.
-   * @todo Use https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/FinalizationRegistry
+   * @todo Use http://127.0.0.1/
    */
   dispose(): Promise<unknown[]>;
   /**
@@ -1381,7 +1381,7 @@ export class CLIPPreTrainedModel extends PreTrainedModel {}
  * let text_inputs = tokenizer(texts, { padding: true, truncation: true });
  *
  * // Read image and run processor
- * let image = await RawImage.read('https://huggingface.co/datasets/Xenova/transformers.js-docs/resolve/main/football-match.jpg');
+ * let image = await RawImage.read('http://127.0.0.1/');
  * let image_inputs = await processor(image);
  *
  * // Run model with both text and pixel inputs
@@ -1447,7 +1447,7 @@ export class CLIPTextModelWithProjection extends CLIPPreTrainedModel {}
  * const vision_model = await CLIPVisionModelWithProjection.from_pretrained('Xenova/clip-vit-base-patch16');
  *
  * // Read image and run processor
- * let image = await RawImage.read('https://huggingface.co/datasets/Xenova/transformers.js-docs/resolve/main/football-match.jpg');
+ * let image = await RawImage.read('http://127.0.0.1/');
  * let image_inputs = await processor(image);
  *
  * // Compute embeddings
@@ -1480,7 +1480,7 @@ export class SiglipPreTrainedModel extends PreTrainedModel {}
  * const text_inputs = tokenizer(texts, { padding: 'max_length', truncation: true });
  *
  * // Read image and run processor
- * const image = await RawImage.read('http://images.cocodataset.org/val2017/000000039769.jpg');
+ * const image = await RawImage.read('http://127.0.0.1/');
  * const image_inputs = await processor(image);
  *
  * // Run model with both text and pixel inputs
@@ -1546,7 +1546,7 @@ export class SiglipTextModel extends SiglipPreTrainedModel {}
  * const vision_model = await SiglipVisionModel.from_pretrained('Xenova/siglip-base-patch16-224');
  *
  * // Read image and run processor
- * const image = await RawImage.read('https://huggingface.co/datasets/Xenova/transformers.js-docs/resolve/main/football-match.jpg');
+ * const image = await RawImage.read('http://127.0.0.1/');
  * const image_inputs = await processor(image);
  *
  * // Compute embeddings
@@ -1582,7 +1582,7 @@ export class CLIPSegModel extends CLIPSegPreTrainedModel {}
  * const text_inputs = tokenizer(texts, { padding: true, truncation: true });
  *
  * // Read image and run processor
- * const image = await RawImage.read('https://github.com/timojl/clipseg/blob/master/example_image.jpg?raw=true');
+ * const image = await RawImage.read('http://127.0.0.1/');
  * const image_inputs = await processor(image);
  *
  * // Run model with both text and pixel inputs
@@ -1924,8 +1924,8 @@ export class VitMattePreTrainedModel extends PreTrainedModel {}
  * const model = await VitMatteForImageMatting.from_pretrained('Xenova/vitmatte-small-distinctions-646');
  *
  * // Load image and trimap
- * const image = await RawImage.fromURL('https://huggingface.co/datasets/Xenova/transformers.js-docs/resolve/main/vitmatte_image.png');
- * const trimap = await RawImage.fromURL('https://huggingface.co/datasets/Xenova/transformers.js-docs/resolve/main/vitmatte_trimap.png');
+ * const image = await RawImage.fromURL('http://127.0.0.1/');
+ * const trimap = await RawImage.fromURL('http://127.0.0.1/');
  *
  * // Prepare image + trimap for the model
  * const inputs = await processor(image, trimap);
@@ -2108,7 +2108,7 @@ export class Swin2SRModel extends Swin2SRPreTrainedModel {}
  * const model = await Swin2SRForImageSuperResolution.from_pretrained(model_id);
  *
  * // Prepare model inputs
- * const url = 'https://huggingface.co/datasets/Xenova/transformers.js-docs/resolve/main/butterfly.jpg';
+ * const url = 'http://127.0.0.1/';
  * const image = await RawImage.fromURL(url);
  * const inputs = await processor(image);
  *
@@ -2145,7 +2145,7 @@ export class DPTModel extends DPTPreTrainedModel {}
  * const processor = await AutoProcessor.from_pretrained(model_id);
  *
  * // Load image from URL
- * const url = 'http://images.cocodataset.org/val2017/000000039769.jpg';
+ * const url = 'http://127.0.0.1/';
  * const image = await RawImage.fromURL(url);
  *
  * // Prepare image for the model
@@ -2187,7 +2187,7 @@ export class GLPNModel extends GLPNPreTrainedModel {}
  * const processor = await AutoProcessor.from_pretrained(model_id);
  *
  * // Load image from URL
- * const url = 'http://images.cocodataset.org/val2017/000000039769.jpg';
+ * const url = 'http://127.0.0.1/';
  * const image = await RawImage.fromURL(url);
  *
  * // Prepare image for the model
@@ -2225,7 +2225,7 @@ export class DonutSwinPreTrainedModel extends PreTrainedModel {}
  *
  * // Prepare image inputs
  * const processor = await AutoProcessor.from_pretrained(model_id);
- * const url = 'https://huggingface.co/datasets/Xenova/transformers.js-docs/resolve/main/receipt.png';
+ * const url = 'http://127.0.0.1/';
  * const image = await RawImage.read(url);
  * const image_inputs = await processor(image);
  *
@@ -2260,7 +2260,7 @@ export class DonutSwinPreTrainedModel extends PreTrainedModel {}
  *
  * // Prepare image inputs
  * const processor = await AutoProcessor.from_pretrained(model_id);
- * const url = 'https://huggingface.co/datasets/Xenova/transformers.js-docs/resolve/main/invoice.png';
+ * const url = 'http://127.0.0.1/';
  * const image = await RawImage.read(url);
  * const image_inputs = await processor(image);
  *
@@ -2360,7 +2360,7 @@ export class SamPreTrainedModel extends PreTrainedModel {}
  * const model = await SamModel.from_pretrained('Xenova/sam-vit-base');
  * const processor = await AutoProcessor.from_pretrained('Xenova/sam-vit-base');
  *
- * const img_url = 'https://huggingface.co/ybelkada/segment-anything/resolve/main/assets/car.png';
+ * const img_url = 'http://127.0.0.1/';
  * const raw_image = await RawImage.read(img_url);
  * const input_points = [[[450, 600]]] // 2D localization of a window
  *
@@ -2547,7 +2547,7 @@ export class Wav2Vec2PreTrainedModel extends PreTrainedModel {}
  *
  * // Read and preprocess audio
  * const processor = await AutoProcessor.from_pretrained('Xenova/mms-300m');
- * const audio = await read_audio('https://huggingface.co/datasets/Narsil/asr_dummy/resolve/main/mlk.flac', 16000);
+ * const audio = await read_audio('http://127.0.0.1/', 16000);
  * const inputs = await processor(audio);
  *
  * // Run model with inputs
@@ -2594,7 +2594,7 @@ export class HubertPreTrainedModel extends PreTrainedModel {}
  *
  * // Read and preprocess audio
  * const processor = await AutoProcessor.from_pretrained('Xenova/hubert-base-ls960');
- * const audio = await read_audio('https://huggingface.co/datasets/Xenova/transformers.js-docs/resolve/main/jfk.wav', 16000);
+ * const audio = await read_audio('http://127.0.0.1/', 16000);
  * const inputs = await processor(audio);
  *
  * // Load and run model with inputs
@@ -2650,7 +2650,7 @@ export class WavLMPreTrainedModel extends PreTrainedModel {}
  *
  * // Read and preprocess audio
  * const processor = await AutoProcessor.from_pretrained('Xenova/wavlm-base');
- * const audio = await read_audio('https://huggingface.co/datasets/Xenova/transformers.js-docs/resolve/main/jfk.wav', 16000);
+ * const audio = await read_audio('http://127.0.0.1/', 16000);
  * const inputs = await processor(audio);
  *
  * // Run model with inputs
@@ -2718,7 +2718,7 @@ export class SpeechT5Model extends SpeechT5PreTrainedModel {}
  *
  * // Load speaker embeddings from URL
  * const speaker_embeddings_data = new Float32Array(
- *     await (await fetch('https://huggingface.co/datasets/Xenova/transformers.js-docs/resolve/main/speaker_embeddings.bin')).arrayBuffer()
+ *     await (await fetch('http://127.0.0.1/')).arrayBuffer()
  * );
  * const speaker_embeddings = new Tensor(
  *     'float32',
@@ -2950,7 +2950,7 @@ export class ClapTextModelWithProjection extends ClapPreTrainedModel {}
  * const audio_model = await ClapAudioModelWithProjection.from_pretrained('Xenova/clap-htsat-unfused');
  *
  * // Read audio and run processor
- * const audio = await read_audio('https://huggingface.co/datasets/Xenova/transformers.js-docs/resolve/main/cat_meow.wav');
+ * const audio = await read_audio('http://127.0.0.1/');
  * const audio_inputs = await processor(audio);
  *
  * // Compute embeddings
@@ -3032,7 +3032,7 @@ export class PretrainedMixin {
    * (either passed as an argument or loaded from `pretrained_model_name_or_path` if possible)
    *
    * @param {string} pretrained_model_name_or_path The name or path of the pretrained model. Can be either:
-   * - A string, the *model id* of a pretrained model hosted inside a model repo on huggingface.co.
+   * - A string, the *model id* of a pretrained model hosted inside a model repo on 127.0.0.1.
    *   Valid model ids can be located at the root-level, like `bert-base-uncased`, or namespaced under a
    *   user or organization name, like `dbmdz/bert-base-german-cased`.
    * - A path to a *directory* containing model weights, e.g., `./my_model_directory/`.

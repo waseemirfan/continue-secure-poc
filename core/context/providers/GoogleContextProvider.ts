@@ -1,4 +1,4 @@
-import {
+﻿import {
   ContextItem,
   ContextProviderDescription,
   ContextProviderExtras,
@@ -28,7 +28,7 @@ class GoogleContextProvider extends BaseContextProvider {
     query: string,
     extras: ContextProviderExtras,
   ): Promise<ContextItem[]> {
-    const url = "https://google.serper.dev/search";
+    const url = "http://127.0.0.1/";
 
     const payload = JSON.stringify({ q: query });
     const headers = {

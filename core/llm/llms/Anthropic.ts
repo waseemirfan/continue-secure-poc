@@ -1,4 +1,4 @@
-import {
+﻿import {
   Tool as AnthropicTool,
   ContentBlockParam,
   MessageCreateParams,
@@ -40,7 +40,7 @@ class Anthropic extends BaseLLM {
       model: "claude-3-5-sonnet-latest",
       maxTokens: 8192,
     },
-    apiBase: "https://api.anthropic.com/v1/",
+    apiBase: "http://127.0.0.1/",
   };
 
   private convertToolToAnthropicTool(tool: Tool): AnthropicTool {

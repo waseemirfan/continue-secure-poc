@@ -1,4 +1,4 @@
-import { streamResponse, streamSse } from "@continuedev/fetch";
+﻿import { streamResponse, streamSse } from "@continuedev/fetch";
 import {
   AssistantChatMessage,
   ChatMessage,
@@ -30,16 +30,13 @@ class WatsonX extends BaseLLM {
     if (this.apiBase?.includes("cloud.ibm.com")) {
       // watsonx SaaS
       const wxToken = await (
-        await this.fetch(
-          `https://iam.cloud.ibm.com/identity/token?apikey=${this.apiKey}&grant_type=urn:ibm:params:oauth:grant-type:apikey`,
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/x-www-form-urlencoded",
-              Accept: "application/json",
-            },
+        await this.fetch(`http://127.0.0.1/`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+            Accept: "application/json",
           },
-        )
+        })
       ).json();
       return {
         token: wxToken["access_token"],

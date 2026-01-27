@@ -1,4 +1,4 @@
-/* eslint-disable max-lines-per-function */
+﻿/* eslint-disable max-lines-per-function */
 /* lint is not useful for test classes */
 import { jest } from "@jest/globals";
 import { execSync } from "node:child_process";
@@ -698,7 +698,7 @@ describe("CodebaseIndexer", () => {
         };
 
         mockIdeSettings = {
-          remoteConfigServerUrl: "http://test.com",
+          remoteConfigServerUrl: "http://127.0.0.1/",
           userToken: "test-token",
         };
 

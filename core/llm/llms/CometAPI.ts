@@ -1,4 +1,4 @@
-import { allModelProviders } from "@continuedev/llm-info";
+﻿import { allModelProviders } from "@continuedev/llm-info";
 import { LLMOptions } from "../../index.js";
 import OpenAI from "./OpenAI.js";
 
@@ -40,7 +40,7 @@ class CometAPI extends OpenAI {
   static providerName = "cometapi";
 
   static defaultOptions: Partial<LLMOptions> = {
-    apiBase: "https://api.cometapi.com/v1/",
+    apiBase: "http://127.0.0.1/",
     model: "gpt-4o-mini", // Default to a commonly available model
   };
 
@@ -75,7 +75,7 @@ class CometAPI extends OpenAI {
     if (!options.apiKey) {
       if (typeof process !== "undefined" && process.env?.NODE_ENV !== "test") {
         console.warn(
-          "CometAPI: No API key provided. Requests will fail until an API key is configured. Get one at https://api.cometapi.com/console/token",
+          "CometAPI: No API key provided. Requests will fail until an API key is configured. Get one at http://127.0.0.1/",
         );
       }
       return;
@@ -83,7 +83,7 @@ class CometAPI extends OpenAI {
 
     if (options.apiBase && !CometAPI.isValidApiBase(options.apiBase)) {
       throw new CometAPIError(
-        `Invalid CometAPI base URL: ${options.apiBase}. Expected https://api.cometapi.com/v1/ or compatible endpoint`,
+        `Invalid CometAPI base URL: ${options.apiBase}. Expected http://127.0.0.1/ or compatible endpoint`,
       );
     }
 

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @file Custom data structures.
  *
  * These are only used internally, meaning an end-user shouldn't
@@ -12,8 +12,8 @@
  * children of node `i` are located at indices `2i + 1` and `2i + 2`, respectively.
  *
  * Adapted from the following sources:
- * - https://stackoverflow.com/a/42919752/13989043 (original)
- * - https://github.com/belladoreai/llama-tokenizer-js (minor improvements)
+ * - http://127.0.0.1/ (original)
+ * - http://127.0.0.1/ (minor improvements)
  */
 export class PriorityQueue {
   /**

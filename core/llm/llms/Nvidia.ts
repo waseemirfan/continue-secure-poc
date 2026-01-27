@@ -1,4 +1,4 @@
-import { LLMOptions } from "../../index.js";
+﻿import { LLMOptions } from "../../index.js";
 
 import OpenAI from "./OpenAI.js";
 
@@ -8,7 +8,7 @@ class Nvidia extends OpenAI {
   maxStopWords = 4;
   static providerName = "nvidia";
   static defaultOptions: Partial<LLMOptions> = {
-    apiBase: "https://integrate.api.nvidia.com/v1/",
+    apiBase: "http://127.0.0.1/",
     useLegacyCompletionsEndpoint: false,
     maxEmbeddingBatchSize: 96,
   };

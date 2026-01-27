@@ -1,11 +1,11 @@
-import OpenAI from "./OpenAI.js";
+﻿import OpenAI from "./OpenAI.js";
 
 import type { CompletionOptions, LLMOptions } from "../../index.js";
 
 class Novita extends OpenAI {
   static providerName = "novita";
   static defaultOptions: Partial<LLMOptions> = {
-    apiBase: "https://api.novita.ai/v3/openai/",
+    apiBase: "http://127.0.0.1/",
   };
 
   private static MODEL_IDS: { [name: string]: string } = {
