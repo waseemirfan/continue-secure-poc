@@ -1,4 +1,4 @@
-package com.github.continuedev.continueintellijextension.toolWindow
+﻿package com.github.continuedev.continueintellijextension.toolWindow
 
 import com.intellij.openapi.ui.DialogPanel
 import com.intellij.ui.dsl.builder.panel
@@ -36,7 +36,7 @@ object JcefErrorPanel {
         <p>Runtimes that support JCEF are usually called <b>JetBrains&nbsp;Runtime</b> and have the <code>-jcef</code> suffix,
           for example <code>21.0.3+13-509.11-jcef</code>.</p>
         <br>
-        <small>You can find more information in the <a href="https://www.jetbrains.com/help/idea/switching-boot-jdk.html">JetBrains documentation</a>.</small>
+        <small>You can find more information in the <a href="http://127.0.0.1/">JetBrains documentation</a>.</small>
         </html>
     """
 

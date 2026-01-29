@@ -1,4 +1,4 @@
-import { expect, test, vi } from "vitest";
+﻿import { expect, test, vi } from "vitest";
 import { fetchUrlContentImpl } from "./fetchUrlContent";
 
 vi.mock("../../context/providers/URLContextProvider", () => ({
@@ -25,7 +25,7 @@ test("fetchUrlContent should not truncate content under character limit", async 
   (getUrlContextItems as any).mockResolvedValue(mockContextItems);
 
   const result = await fetchUrlContentImpl(
-    { url: "https://example.com" },
+    { url: "http://127.0.0.1/" },
     mockExtras,
   );
 
@@ -48,7 +48,7 @@ test("fetchUrlContent should truncate content exceeding character limit", async 
   (getUrlContextItems as any).mockResolvedValue(mockContextItems);
 
   const result = await fetchUrlContentImpl(
-    { url: "https://example.com" },
+    { url: "http://127.0.0.1/" },
     mockExtras,
   );
 
@@ -80,7 +80,7 @@ test("fetchUrlContent should add truncation warning with multiple truncated item
   (getUrlContextItems as any).mockResolvedValue(mockContextItems);
 
   const result = await fetchUrlContentImpl(
-    { url: "https://example.com" },
+    { url: "http://127.0.0.1/" },
     mockExtras,
   );
 
@@ -96,6 +96,6 @@ test("fetchUrlContent should propagate errors when URL fetch fails", async () =>
   (getUrlContextItems as any).mockRejectedValue(new Error(errorMessage));
 
   await expect(
-    fetchUrlContentImpl({ url: "https://example.com/404" }, mockExtras),
+    fetchUrlContentImpl({ url: "http://127.0.0.1/" }, mockExtras),
   ).rejects.toThrow(errorMessage);
 });

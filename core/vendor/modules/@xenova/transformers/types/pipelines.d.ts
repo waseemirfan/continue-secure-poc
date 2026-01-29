@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @typedef {keyof typeof SUPPORTED_TASKS} TaskType
  * @typedef {keyof typeof TASK_ALIASES} AliasType
  * @typedef {TaskType | AliasType} PipelineType All possible pipeline types.
@@ -429,7 +429,7 @@ declare const TranslationPipeline_base: new (
  *
  * **Example:** Multilingual translation w/ `Xenova/nllb-200-distilled-600M`.
  *
- * See [here](https://github.com/facebookresearch/flores/blob/main/flores200/README.md#languages-in-flores-200)
+ * See [here](http://127.0.0.1/)
  * for the full list of languages and their corresponding codes.
  *
  * ```javascript
@@ -443,7 +443,7 @@ declare const TranslationPipeline_base: new (
  *
  * **Example:** Multilingual translation w/ `Xenova/m2m100_418M`.
  *
- * See [here](https://huggingface.co/facebook/m2m100_418M#languages-covered)
+ * See [here](http://127.0.0.1/)
  * for the full list of languages and their corresponding codes.
  *
  * ```javascript
@@ -457,7 +457,7 @@ declare const TranslationPipeline_base: new (
  *
  * **Example:** Multilingual translation w/ `Xenova/mbart-large-50-many-to-many-mmt`.
  *
- * See [here](https://huggingface.co/facebook/mbart-large-50-many-to-many-mmt#languages-covered)
+ * See [here](http://127.0.0.1/)
  * for the full list of languages and their corresponding codes.
  *
  * ```javascript
@@ -693,7 +693,7 @@ declare const AudioClassificationPipeline_base: new (
  * @callback AudioClassificationPipelineCallback Classify the sequence(s) given as inputs.
  * @param {AudioPipelineInputs} audio The input audio file(s) to be classified. The input is either:
  * - `string` or `URL` that is the filename/URL of the audio file, the file will be read at the processor's sampling rate
- * to get the waveform using the [`AudioContext`](https://developer.mozilla.org/en-US/docs/Web/API/AudioContext) API.
+ * to get the waveform using the [`AudioContext`](http://127.0.0.1/) API.
  * If `AudioContext` is not available, you should pass the raw waveform in as a Float32Array of shape `(n, )`.
  * - `Float32Array` or `Float64Array` of shape `(n, )`, representing the raw audio at the correct sampling rate (no further check will be done).
  * @param {AudioClassificationPipelineOptions} [options] The options to use for audio classification.
@@ -708,7 +708,7 @@ declare const AudioClassificationPipeline_base: new (
  * **Example:** Perform audio classification with `Xenova/wav2vec2-large-xlsr-53-gender-recognition-librispeech`.
  * ```javascript
  * const classifier = await pipeline('audio-classification', 'Xenova/wav2vec2-large-xlsr-53-gender-recognition-librispeech');
- * const url = 'https://huggingface.co/datasets/Xenova/transformers.js-docs/resolve/main/jfk.wav';
+ * const url = 'http://127.0.0.1/
  * const output = await classifier(url);
  * // [
  * //   { label: 'male', score: 0.9981542229652405 },
@@ -719,7 +719,7 @@ declare const AudioClassificationPipeline_base: new (
  * **Example:** Perform audio classification with `Xenova/ast-finetuned-audioset-10-10-0.4593` and return top 4 results.
  * ```javascript
  * const classifier = await pipeline('audio-classification', 'Xenova/ast-finetuned-audioset-10-10-0.4593');
- * const url = 'https://huggingface.co/datasets/Xenova/transformers.js-docs/resolve/main/cat_meow.wav';
+ * const url = 'http://127.0.0.1/
  * const output = await classifier(url, { topk: 4 });
  * // [
  * //   { label: 'Meow', score: 0.5617874264717102 },
@@ -751,7 +751,7 @@ declare const ZeroShotAudioClassificationPipeline_base: new (
  * @callback ZeroShotAudioClassificationPipelineCallback Classify the sequence(s) given as inputs.
  * @param {AudioPipelineInputs} audio The input audio file(s) to be classified. The input is either:
  * - `string` or `URL` that is the filename/URL of the audio file, the file will be read at the processor's sampling rate
- * to get the waveform using the [`AudioContext`](https://developer.mozilla.org/en-US/docs/Web/API/AudioContext) API.
+ * to get the waveform using the [`AudioContext`](http://127.0.0.1/) API.
  * If `AudioContext` is not available, you should pass the raw waveform in as a Float32Array of shape `(n, )`.
  * - `Float32Array` or `Float64Array` of shape `(n, )`, representing the raw audio at the correct sampling rate (no further check will be done).
  * @param {string[]} candidate_labels The candidate labels for this audio.
@@ -767,7 +767,7 @@ declare const ZeroShotAudioClassificationPipeline_base: new (
  * **Example**: Perform zero-shot audio classification with `Xenova/clap-htsat-unfused`.
  * ```javascript
  * const classifier = await pipeline('zero-shot-audio-classification', 'Xenova/clap-htsat-unfused');
- * const audio = 'https://huggingface.co/datasets/Xenova/transformers.js-docs/resolve/main/dog_barking.wav';
+ * const audio = 'http://127.0.0.1/
  * const candidate_labels = ['dog', 'vaccum cleaner'];
  * const scores = await classifier(audio, candidate_labels);
  * // [
@@ -820,7 +820,7 @@ declare const AutomaticSpeechRecognitionPipeline_base: new (
  * @callback AutomaticSpeechRecognitionPipelineCallback Transcribe the audio sequence(s) given as inputs to text.
  * @param {AudioPipelineInputs} audio The input audio file(s) to be transcribed. The input is either:
  * - `string` or `URL` that is the filename/URL of the audio file, the file will be read at the processor's sampling rate
- * to get the waveform using the [`AudioContext`](https://developer.mozilla.org/en-US/docs/Web/API/AudioContext) API.
+ * to get the waveform using the [`AudioContext`](http://127.0.0.1/) API.
  * If `AudioContext` is not available, you should pass the raw waveform in as a Float32Array of shape `(n, )`.
  * - `Float32Array` or `Float64Array` of shape `(n, )`, representing the raw audio at the correct sampling rate (no further check will be done).
  * @param {AutomaticSpeechRecognitionConfig} [options] Additional keyword arguments to pass along to the generate method of the model.
@@ -834,7 +834,7 @@ declare const AutomaticSpeechRecognitionPipeline_base: new (
  * **Example:** Transcribe English.
  * ```javascript
  * const transcriber = await pipeline('automatic-speech-recognition', 'Xenova/whisper-tiny.en');
- * const url = 'https://huggingface.co/datasets/Xenova/transformers.js-docs/resolve/main/jfk.wav';
+ * const url = 'http://127.0.0.1/';
  * const output = await transcriber(url);
  * // { text: " And so my fellow Americans ask not what your country can do for you, ask what you can do for your country." }
  * ```
@@ -842,7 +842,7 @@ declare const AutomaticSpeechRecognitionPipeline_base: new (
  * **Example:** Transcribe English w/ timestamps.
  * ```javascript
  * const transcriber = await pipeline('automatic-speech-recognition', 'Xenova/whisper-tiny.en');
- * const url = 'https://huggingface.co/datasets/Xenova/transformers.js-docs/resolve/main/jfk.wav';
+ * const url = 'http://127.0.0.1/';
  * const output = await transcriber(url, { return_timestamps: true });
  * // {
  * //   text: " And so my fellow Americans ask not what your country can do for you, ask what you can do for your country."
@@ -856,7 +856,7 @@ declare const AutomaticSpeechRecognitionPipeline_base: new (
  * **Example:** Transcribe English w/ word-level timestamps.
  * ```javascript
  * const transcriber = await pipeline('automatic-speech-recognition', 'Xenova/whisper-tiny.en');
- * const url = 'https://huggingface.co/datasets/Xenova/transformers.js-docs/resolve/main/jfk.wav';
+ * const url = 'http://127.0.0.1/';
  * const output = await transcriber(url, { return_timestamps: 'word' });
  * // {
  * //   "text": " And so my fellow Americans ask not what your country can do for you ask what you can do for your country.",
@@ -875,7 +875,7 @@ declare const AutomaticSpeechRecognitionPipeline_base: new (
  * **Example:** Transcribe French.
  * ```javascript
  * const transcriber = await pipeline('automatic-speech-recognition', 'Xenova/whisper-small');
- * const url = 'https://huggingface.co/datasets/Xenova/transformers.js-docs/resolve/main/french-audio.mp3';
+ * const url = 'http://127.0.0.1/';
  * const output = await transcriber(url, { language: 'french', task: 'transcribe' });
  * // { text: " J'adore, j'aime, je n'aime pas, je déteste." }
  * ```
@@ -883,7 +883,7 @@ declare const AutomaticSpeechRecognitionPipeline_base: new (
  * **Example:** Translate French to English.
  * ```javascript
  * const transcriber = await pipeline('automatic-speech-recognition', 'Xenova/whisper-small');
- * const url = 'https://huggingface.co/datasets/Xenova/transformers.js-docs/resolve/main/french-audio.mp3';
+ * const url = 'http://127.0.0.1/';
  * const output = await transcriber(url, { language: 'french', task: 'translate' });
  * // { text: " I love, I like, I don't like, I hate." }
  * ```
@@ -891,7 +891,7 @@ declare const AutomaticSpeechRecognitionPipeline_base: new (
  * **Example:** Transcribe/translate audio longer than 30 seconds.
  * ```javascript
  * const transcriber = await pipeline('automatic-speech-recognition', 'Xenova/whisper-tiny.en');
- * const url = 'https://huggingface.co/datasets/Xenova/transformers.js-docs/resolve/main/ted_60.wav';
+ * const url = 'http://127.0.0.1/';
  * const output = await transcriber(url, { chunk_length_s: 30, stride_length_s: 5 });
  * // { text: " So in college, I was a government major, which means [...] So I'd start off light and I'd bump it up" }
  * ```
@@ -935,7 +935,7 @@ declare const ImageToTextPipeline_base: new (
  * **Example:** Generate a caption for an image w/ `Xenova/vit-gpt2-image-captioning`.
  * ```javascript
  * const captioner = await pipeline('image-to-text', 'Xenova/vit-gpt2-image-captioning');
- * const url = 'https://huggingface.co/datasets/Xenova/transformers.js-docs/resolve/main/cats.jpg';
+ * const url = 'http://127.0.0.1/';
  * const output = await captioner(url);
  * // [{ generated_text: 'a cat laying on a couch with another cat' }]
  * ```
@@ -943,7 +943,7 @@ declare const ImageToTextPipeline_base: new (
  * **Example:** Optical Character Recognition (OCR) w/ `Xenova/trocr-small-handwritten`.
  * ```javascript
  * const captioner = await pipeline('image-to-text', 'Xenova/trocr-small-handwritten');
- * const url = 'https://huggingface.co/datasets/Xenova/transformers.js-docs/resolve/main/handwriting.jpg';
+ * const url = 'http://127.0.0.1/';
  * const output = await captioner(url);
  * // [{ generated_text: 'Mr. Brown commented icily.' }]
  * ```
@@ -980,7 +980,7 @@ declare const ImageClassificationPipeline_base: new (
  * **Example:** Classify an image.
  * ```javascript
  * const classifier = await pipeline('image-classification', 'Xenova/vit-base-patch16-224');
- * const url = 'https://huggingface.co/datasets/Xenova/transformers.js-docs/resolve/main/tiger.jpg';
+ * const url = 'http://127.0.0.1/';
  * const output = await classifier(url);
  * // [
  * //   { label: 'tiger, Panthera tigris', score: 0.632695734500885 },
@@ -990,7 +990,7 @@ declare const ImageClassificationPipeline_base: new (
  * **Example:** Classify an image and return top `n` classes.
  * ```javascript
  * const classifier = await pipeline('image-classification', 'Xenova/vit-base-patch16-224');
- * const url = 'https://huggingface.co/datasets/Xenova/transformers.js-docs/resolve/main/tiger.jpg';
+ * const url = 'http://127.0.0.1/';
  * const output = await classifier(url, { topk: 3 });
  * // [
  * //   { label: 'tiger, Panthera tigris', score: 0.632695734500885 },
@@ -1002,7 +1002,7 @@ declare const ImageClassificationPipeline_base: new (
  * **Example:** Classify an image and return all classes.
  * ```javascript
  * const classifier = await pipeline('image-classification', 'Xenova/vit-base-patch16-224');
- * const url = 'https://huggingface.co/datasets/Xenova/transformers.js-docs/resolve/main/tiger.jpg';
+ * const url = 'http://127.0.0.1/';
  * const output = await classifier(url, { topk: 0 });
  * // [
  * //   { label: 'tiger, Panthera tigris', score: 0.632695734500885 },
@@ -1051,7 +1051,7 @@ declare const ImageSegmentationPipeline_base: new (
  * **Example:** Perform image segmentation with `Xenova/detr-resnet-50-panoptic`.
  * ```javascript
  * const segmenter = await pipeline('image-segmentation', 'Xenova/detr-resnet-50-panoptic');
- * const url = 'https://huggingface.co/datasets/Xenova/transformers.js-docs/resolve/main/cats.jpg';
+ * const url = 'http://127.0.0.1/';
  * const output = await segmenter(url);
  * // [
  * //   { label: 'remote', score: 0.9984649419784546, mask: RawImage { ... } },
@@ -1098,7 +1098,7 @@ declare const ZeroShotImageClassificationPipeline_base: new (
  * **Example:** Zero shot image classification w/ `Xenova/clip-vit-base-patch32`.
  * ```javascript
  * const classifier = await pipeline('zero-shot-image-classification', 'Xenova/clip-vit-base-patch32');
- * const url = 'https://huggingface.co/datasets/Xenova/transformers.js-docs/resolve/main/tiger.jpg';
+ * const url = 'http://127.0.0.1/';
  * const output = await classifier(url, ['tiger', 'horse', 'dog']);
  * // [
  * //   { score: 0.9993917942047119, label: 'tiger' },
@@ -1144,7 +1144,7 @@ declare const ObjectDetectionPipeline_base: new (
  * **Example:** Run object-detection with `Xenova/detr-resnet-50`.
  * ```javascript
  * const detector = await pipeline('object-detection', 'Xenova/detr-resnet-50');
- * const img = 'https://huggingface.co/datasets/Xenova/transformers.js-docs/resolve/main/cats.jpg';
+ * const img = 'http://127.0.0.1/';
  * const output = await detector(img, { threshold: 0.9 });
  * // [{
  * //   score: 0.9976370930671692,
@@ -1196,7 +1196,7 @@ declare const ZeroShotObjectDetectionPipeline_base: new (
  * **Example:** Zero-shot object detection w/ `Xenova/owlvit-base-patch32`.
  * ```javascript
  * const detector = await pipeline('zero-shot-object-detection', 'Xenova/owlvit-base-patch32');
- * const url = 'https://huggingface.co/datasets/Xenova/transformers.js-docs/resolve/main/astronaut.png';
+ * const url = 'http://127.0.0.1/';
  * const candidate_labels = ['human face', 'rocket', 'helmet', 'american flag'];
  * const output = await detector(url, candidate_labels);
  * // [
@@ -1226,7 +1226,7 @@ declare const ZeroShotObjectDetectionPipeline_base: new (
  * **Example:** Zero-shot object detection w/ `Xenova/owlvit-base-patch32` (returning top 4 matches and setting a threshold).
  * ```javascript
  * const detector = await pipeline('zero-shot-object-detection', 'Xenova/owlvit-base-patch32');
- * const url = 'https://huggingface.co/datasets/Xenova/transformers.js-docs/resolve/main/beach.png';
+ * const url = 'http://127.0.0.1/';
  * const candidate_labels = ['hat', 'book', 'sunglasses', 'camera'];
  * const output = await detector(url, candidate_labels, { topk: 4, threshold: 0.05 });
  * // [
@@ -1286,7 +1286,7 @@ declare const DocumentQuestionAnsweringPipeline_base: new (
  * **Example:** Answer questions about a document with `Xenova/donut-base-finetuned-docvqa`.
  * ```javascript
  * const qa_pipeline = await pipeline('document-question-answering', 'Xenova/donut-base-finetuned-docvqa');
- * const image = 'https://huggingface.co/datasets/Xenova/transformers.js-docs/resolve/main/invoice.png';
+ * const image = 'http://127.0.0.1/';
  * const question = 'What is the invoice number?';
  * const output = await qa_pipeline(image, question);
  * // [{ answer: 'us-001' }]
@@ -1331,7 +1331,7 @@ declare const TextToAudioPipeline_base: new (
  * **Example:** Generate audio from text with `Xenova/speecht5_tts`.
  * ```javascript
  * const synthesizer = await pipeline('text-to-speech', 'Xenova/speecht5_tts', { quantized: false });
- * const speaker_embeddings = 'https://huggingface.co/datasets/Xenova/transformers.js-docs/resolve/main/speaker_embeddings.bin';
+ * const speaker_embeddings = 'http://127.0.0.1/';
  * const out = await synthesizer('Hello, my dog is cute', { speaker_embeddings });
  * // {
  * //   audio: Float32Array(26112) [-0.00005657337896991521, 0.00020583874720614403, ...],
@@ -1349,7 +1349,7 @@ declare const TextToAudioPipeline_base: new (
  * fs.writeFileSync('out.wav', wav.toBuffer());
  * ```
  *
- * **Example:** Multilingual speech generation with `Xenova/mms-tts-fra`. See [here](https://huggingface.co/models?pipeline_tag=text-to-speech&other=vits&sort=trending) for the full list of available languages (1107).
+ * **Example:** Multilingual speech generation with `Xenova/mms-tts-fra`. See [here](http://127.0.0.1/) for the full list of available languages (1107).
  * ```javascript
  * const synthesizer = await pipeline('text-to-speech', 'Xenova/mms-tts-fra');
  * const out = await synthesizer('Bonjour');
@@ -1398,7 +1398,7 @@ declare const ImageToImagePipeline_base: new (
  * **Example:** Super-resolution w/ `Xenova/swin2SR-classical-sr-x2-64`
  * ```javascript
  * const upscaler = await pipeline('image-to-image', 'Xenova/swin2SR-classical-sr-x2-64');
- * const url = 'https://huggingface.co/datasets/Xenova/transformers.js-docs/resolve/main/butterfly.jpg';
+ * const url = 'http://127.0.0.1/';
  * const output = await upscaler(url);
  * // RawImage {
  * //   data: Uint8Array(786432) [ 41, 31, 24,  43, ... ],
@@ -1431,7 +1431,7 @@ declare const DepthEstimationPipeline_base: new (
  * **Example:** Depth estimation w/ `Xenova/dpt-hybrid-midas`
  * ```javascript
  * const depth_estimator = await pipeline('depth-estimation', 'Xenova/dpt-hybrid-midas');
- * const url = 'https://huggingface.co/datasets/Xenova/transformers.js-docs/resolve/main/cats.jpg';
+ * const url = 'http://127.0.0.1/';
  * const out = await depth_estimator(url);
  * // {
  * //   predicted_depth: Tensor {

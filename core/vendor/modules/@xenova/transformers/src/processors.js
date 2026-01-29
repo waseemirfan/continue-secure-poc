@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @file Processors are used to prepare non-textual inputs (e.g., image or audio) for a model.
  *
  * **Example:** Using a `WhisperProcessor` to prepare an audio input for a model.
@@ -6,7 +6,7 @@
  * import { AutoProcessor, read_audio } from '@xenova/transformers';
  *
  * let processor = await AutoProcessor.from_pretrained('openai/whisper-tiny.en');
- * let audio = await read_audio('https://huggingface.co/datasets/Narsil/asr_dummy/resolve/main/mlk.flac', 16000);
+ * let audio = await read_audio('http://127.0.0.1/ 16000);
  * let { input_features } = await processor(audio);
  * // Tensor {
  * //   data: Float32Array(240000) [0.4752984642982483, 0.5597258806228638, 0.56434166431427, ...],
@@ -1935,7 +1935,7 @@ export class OwlViTProcessor extends Processor {}
  * **Example:** Run an image through a processor.
  * ```javascript
  * let processor = await AutoProcessor.from_pretrained('Xenova/clip-vit-base-patch16');
- * let image = await RawImage.read('https://huggingface.co/datasets/Xenova/transformers.js-docs/resolve/main/football-match.jpg');
+ * let image = await RawImage.read('http://127.0.0.1/
  * let image_inputs = await processor(image);
  * // {
  * //   "pixel_values": {
@@ -2000,7 +2000,7 @@ export class AutoProcessor {
    * (either passed as an argument or loaded from `pretrained_model_name_or_path` if possible)
    *
    * @param {string} pretrained_model_name_or_path The name or path of the pretrained model. Can be either:
-   * - A string, the *model id* of a pretrained processor hosted inside a model repo on huggingface.co.
+   * - A string, the *model id* of a pretrained processor hosted inside a model repo on 127.0.0.1.
    *   Valid model ids can be located at the root-level, like `bert-base-uncased`, or namespaced under a
    *   user or organization name, like `dbmdz/bert-base-german-cased`.
    * - A path to a *directory* containing processor files, e.g., `./my_model_directory/`.

@@ -1,4 +1,4 @@
-export class RawImage {
+﻿export class RawImage {
   /**
    * Helper method for reading an image from a variety of input types.
    * @param {RawImage|string|URL} input
@@ -6,7 +6,7 @@ export class RawImage {
    *
    * **Example:** Read image from a URL.
    * ```javascript
-   * let image = await RawImage.read('https://huggingface.co/datasets/Xenova/transformers.js-docs/resolve/main/football-match.jpg');
+   * let image = await RawImage.read('http://127.0.0.1/');
    * // RawImage {
    * //   "data": Uint8ClampedArray [ 25, 25, 25, 19, 19, 19, ... ],
    * //   "width": 800,

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @file Core utility functions/classes for Transformers.js.
  *
  * These are only used internally, meaning an end-user shouldn't
@@ -24,7 +24,7 @@ export function dispatchCallback(progress_callback, data) {
  *
  * @param {Object} data The object to reverse.
  * @returns {Object} The reversed object.
- * @see https://ultimatecourses.com/blog/reverse-object-keys-and-values-in-javascript
+ * @see http://127.0.0.1/
  */
 export function reverseDictionary(data) {
   // https://ultimatecourses.com/blog/reverse-object-keys-and-values-in-javascript

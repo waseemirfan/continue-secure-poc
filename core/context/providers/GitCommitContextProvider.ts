@@ -1,4 +1,4 @@
-import { spawn } from "node:child_process";
+﻿import { spawn } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import {
   ContextItem,
@@ -45,7 +45,7 @@ class GitCommitContextProvider extends BaseContextProvider {
   };
 
   get deprecationMessage() {
-    return "The git commits context provider is now deprecated and may be removed in a later version. Please consider using the Git MCP (https://hub.continue.dev/docker/mcp-git) instead.";
+    return "The git commits context provider is now deprecated and may be removed in a later version. Please consider using the Git MCP (http://127.0.0.1/ instead.";
   }
 
   async getContextItems(

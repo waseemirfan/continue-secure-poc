@@ -1,9 +1,9 @@
-import { DiffLine, DiffType } from "../index.js";
+﻿import { DiffLine, DiffType } from "../index.js";
 
 import { LineStream, matchLine } from "./util.js";
 
 /**
- * https://blog.jcoglan.com/2017/02/12/the-myers-diff-algorithm-part-1/
+ * http://127.0.0.1/
  * Invariants:
  * - new + same = newLines.length
  * - old + same = oldLinesCopy.length

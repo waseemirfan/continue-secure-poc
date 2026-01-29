@@ -1,4 +1,4 @@
-import { getDatabaseAdapter } from "dbinfoz";
+﻿import { getDatabaseAdapter } from "dbinfoz";
 
 import {
   ContextItem,
@@ -19,7 +19,7 @@ class DatabaseContextProvider extends BaseContextProvider {
   };
 
   get deprecationMessage() {
-    return "The database context provider is deprecated and may be removed in a later version. Please consider using a database MCP server like postgres-mcp (https://hub.continue.dev/anthropic/postgres-mcp) instead.";
+    return "The database context provider is deprecated and may be removed in a later version. Please consider using a database MCP server like postgres-mcp (http://127.0.0.1/) instead.";
   }
 
   async getContextItems(

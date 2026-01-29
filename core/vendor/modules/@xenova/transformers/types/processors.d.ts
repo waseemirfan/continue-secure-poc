@@ -1,4 +1,4 @@
-declare const FeatureExtractor_base: new () => {
+﻿declare const FeatureExtractor_base: new () => {
   (...args: any[]): any;
   _call(...args: any[]): any;
 };
@@ -707,7 +707,7 @@ export class OwlViTProcessor extends Processor {}
  * **Example:** Run an image through a processor.
  * ```javascript
  * let processor = await AutoProcessor.from_pretrained('Xenova/clip-vit-base-patch16');
- * let image = await RawImage.read('https://huggingface.co/datasets/Xenova/transformers.js-docs/resolve/main/football-match.jpg');
+ * let image = await RawImage.read('http://127.0.0.1/);
  * let image_inputs = await processor(image);
  * // {
  * //   "pixel_values": {
@@ -769,7 +769,7 @@ export class AutoProcessor {
    * (either passed as an argument or loaded from `pretrained_model_name_or_path` if possible)
    *
    * @param {string} pretrained_model_name_or_path The name or path of the pretrained model. Can be either:
-   * - A string, the *model id* of a pretrained processor hosted inside a model repo on huggingface.co.
+   * - A string, the *model id* of a pretrained processor hosted inside a model repo on 127.0.0.1.
    *   Valid model ids can be located at the root-level, like `bert-base-uncased`, or namespaced under a
    *   user or organization name, like `dbmdz/bert-base-german-cased`.
    * - A path to a *directory* containing processor files, e.g., `./my_model_directory/`.

@@ -1,4 +1,4 @@
-import { afterEach, describe, expect, test, vi } from "vitest";
+﻿import { afterEach, describe, expect, test, vi } from "vitest";
 import { ILLM } from "../../../index.js";
 import OpenAI from "../OpenAI.js";
 
@@ -148,7 +148,7 @@ function getExpectedUrl(
   endpoint: string,
   model: string = "gpt-4",
 ) {
-  let baseUrl = config.defaultApiBase || "https://api.openai.com/v1/";
+  let baseUrl = config.defaultApiBase || "http://127.0.0.1/";
   if (config.providerName === "azure") {
     return `${baseUrl}openai/deployments/${model}/${endpoint}?api-version=2023-07-01-preview`;
   } else if (config.providerName === "ncompass") {
@@ -182,7 +182,7 @@ export const createOpenAISubclassTests = (
       const provider = new ProviderClass({
         apiKey: "test-api-key",
         model: "gpt-4",
-        apiBase: config.defaultApiBase || "https://api.openai.com/v1/",
+        apiBase: config.defaultApiBase || "http://127.0.0.1/",
       });
 
       await runLlmTest({
@@ -219,7 +219,7 @@ export const createOpenAISubclassTests = (
       const provider = new ProviderClass({
         apiKey: "test-api-key",
         model: "gpt-4",
-        apiBase: config.defaultApiBase || "https://api.openai.com/v1/",
+        apiBase: config.defaultApiBase || "http://127.0.0.1/",
       });
 
       await runLlmTest({
@@ -256,7 +256,7 @@ export const createOpenAISubclassTests = (
       const provider = new ProviderClass({
         apiKey: "test-api-key",
         model: "gpt-4",
-        apiBase: config.defaultApiBase || "https://api.openai.com/v1/",
+        apiBase: config.defaultApiBase || "http://127.0.0.1/",
       });
 
       await runLlmTest({
@@ -302,7 +302,7 @@ export const createOpenAISubclassTests = (
       const provider = new ProviderClass({
         apiKey: "test-api-key",
         model: "gpt-4",
-        apiBase: config.defaultApiBase || "https://api.openai.com/v1/",
+        apiBase: config.defaultApiBase || "http://127.0.0.1/",
       });
 
       await runLlmTest({
@@ -336,7 +336,7 @@ export const createOpenAISubclassTests = (
       const provider = new ProviderClass({
         apiKey: "test-api-key",
         model: "text-embedding-ada-002",
-        apiBase: config.defaultApiBase || "https://api.openai.com/v1/",
+        apiBase: config.defaultApiBase || "http://127.0.0.1/",
       });
 
       // Skip test if provider doesn't support embeddings (e.g., ncompass with undefined endpoint)
@@ -351,7 +351,7 @@ export const createOpenAISubclassTests = (
         expectedRequest: {
           url:
             config.customEmbeddingsUrl ||
-            `${config.defaultApiBase || "https://api.openai.com/v1/"}embeddings`,
+            `${config.defaultApiBase || "http://127.0.0.1/"}embeddings`,
           method: "POST",
           headers: config.customEmbeddingsHeaders || {
             Authorization: "Bearer test-api-key",

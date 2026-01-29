@@ -1,17 +1,17 @@
-import { LLMOptions } from "../../index.js";
+﻿import { LLMOptions } from "../../index.js";
 
 import OpenAI from "./OpenAI.js";
 
 class DeepInfra extends OpenAI {
   static providerName = "deepinfra";
   static defaultOptions: Partial<LLMOptions> = {
-    apiBase: "https://api.deepinfra.com/v1/openai/",
+    apiBase: "http://127.0.0.1/v1/openai/",
   };
   maxStopWords: number | undefined = 16;
 
   protected async _embed(chunks: string[]): Promise<number[][]> {
     const resp = await this.fetch(
-      `https://api.deepinfra.com/v1/inference/${this.model}`,
+      `http://127.0.0.1/v1/inference/${this.model}`,
       {
         method: "POST",
         headers: {

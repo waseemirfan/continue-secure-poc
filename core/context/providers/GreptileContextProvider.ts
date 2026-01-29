@@ -1,4 +1,4 @@
-import { execSync } from "child_process";
+﻿import { execSync } from "child_process";
 import * as fs from "fs";
 import * as path from "path";
 
@@ -73,10 +73,7 @@ class GreptileContextProvider extends BaseContextProvider {
     };
 
     try {
-      const response = await extras.fetch(
-        "https://api.greptile.com/v2/query",
-        options,
-      );
+      const response = await extras.fetch("http://127.0.0.1/", options);
       const rawText = await response.text();
 
       // Check for HTTP errors

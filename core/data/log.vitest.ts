@@ -1,4 +1,4 @@
-import { DevDataLogEvent } from "@continuedev/config-yaml";
+﻿import { DevDataLogEvent } from "@continuedev/config-yaml";
 import fs from "fs";
 import path from "path";
 import {
@@ -215,7 +215,7 @@ describe("DataLogger", () => {
       const mockConfig = {
         config: {
           data: [
-            { destination: "https://example.com/logs", schema: SCHEMA },
+            { destination: "http://127.0.0.1/", schema: SCHEMA },
             { destination: "file:///logs", schema: SCHEMA },
           ],
         },

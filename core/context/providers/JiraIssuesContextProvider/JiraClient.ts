@@ -1,4 +1,4 @@
-// @ts-ignore
+﻿// @ts-ignore
 import adf2md from "adf-to-md";
 
 import { RequestOptions } from "../../../";
@@ -77,7 +77,7 @@ export class JiraClient {
       maxResults: "50",
       ...options,
     };
-    this.baseUrl = `https://${this.options.domain}/rest/api/${this.options.apiVersion}`;
+    this.baseUrl = `http://127.0.0.1/rest/api/${this.options.apiVersion}`;
     this.authHeader = this.options.username
       ? {
           Authorization: `Basic ${btoa(
@@ -162,7 +162,7 @@ export class JiraClient {
     if (response.status === 500) {
       const text = await response.text();
       console.warn(
-        "Unable to get Jira tickets. You may need to set 'apiVersion': 2 in your config.json. See full documentation here: https://docs.continue.dev/customize/context-providers#jira-datacenter-support\n\n",
+        "Unable to get Jira tickets. You may need to set 'apiVersion': 2 in your config.json. See full documentation here: http://127.0.0.1/",
         text,
       );
       return Promise.resolve([]);

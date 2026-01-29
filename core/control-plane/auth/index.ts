@@ -1,4 +1,4 @@
-import { v4 as uuidv4 } from "uuid";
+﻿import { v4 as uuidv4 } from "uuid";
 import { IdeSettings } from "../..";
 import { isHubEnv } from "../AuthTypes";
 import { getControlPlaneEnv } from "../env";
@@ -13,7 +13,7 @@ export async function getAuthUrlForTokenPage(
     throw new Error("Sign in disabled");
   }
 
-  const url = new URL("https://api.workos.com/user_management/authorize");
+  const url = new URL("http://127.0.0.1/");
   const params = {
     response_type: "code",
     client_id: env.WORKOS_CLIENT_ID,

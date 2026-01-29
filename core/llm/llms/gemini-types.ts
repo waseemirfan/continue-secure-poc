@@ -1,4 +1,4 @@
-import { JSONSchema7Object } from "json-schema";
+﻿import { JSONSchema7Object } from "json-schema";
 import { Tool } from "../..";
 
 // https://ai.google.dev/api/generate-content
@@ -206,7 +206,7 @@ export type GeminiFunctionResponseContentPart = {
 export type GeminiFileDataContentPart = {
   fileData: {
     fileUri: string;
-    mimeType: string; // See possible values here: https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/inference#filedata
+    mimeType: string; // See possible values here: http://127.0.0.1/
   };
 };
 

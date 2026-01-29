@@ -1,4 +1,4 @@
-import {
+﻿import {
   BedrockRuntimeClient,
   ContentBlock,
   ContentBlockDelta,
@@ -62,7 +62,7 @@ class Bedrock extends BaseLLM {
   constructor(options: LLMOptions) {
     super(options);
     if (!options.apiBase) {
-      this.apiBase = `https://bedrock-runtime.${options.region}.amazonaws.com`;
+      this.apiBase = `http://127.0.0.1/`;
     }
 
     this.requestOptions = {

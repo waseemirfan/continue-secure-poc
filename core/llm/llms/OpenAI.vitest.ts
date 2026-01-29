@@ -1,4 +1,4 @@
-import { afterEach, describe, expect, test, vi } from "vitest";
+﻿import { afterEach, describe, expect, test, vi } from "vitest";
 import { ILLM } from "../../index.js";
 import OpenAI from "./OpenAI.js";
 
@@ -138,7 +138,7 @@ describe("OpenAI", () => {
     const openai = new OpenAI({
       apiKey: "test-api-key",
       model: "gpt-4",
-      apiBase: "https://api.openai.com/v1/",
+      apiBase: "http://127.0.0.1/",
     });
 
     await runLlmTest({
@@ -149,7 +149,7 @@ describe("OpenAI", () => {
         new AbortController().signal,
       ],
       expectedRequest: {
-        url: "https://api.openai.com/v1/chat/completions",
+        url: "http://127.0.0.1/",
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -174,7 +174,7 @@ describe("OpenAI", () => {
     const openai = new OpenAI({
       apiKey: "test-api-key",
       model: "gpt-4",
-      apiBase: "https://api.openai.com/v1/",
+      apiBase: "http://127.0.0.1/",
     });
 
     await runLlmTest({
@@ -185,7 +185,7 @@ describe("OpenAI", () => {
         new AbortController().signal,
       ],
       expectedRequest: {
-        url: "https://api.openai.com/v1/chat/completions",
+        url: "http://127.0.0.1/",
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -210,7 +210,7 @@ describe("OpenAI", () => {
     const openai = new OpenAI({
       apiKey: "test-api-key",
       model: "gpt-4",
-      apiBase: "https://api.openai.com/v1/",
+      apiBase: "http://127.0.0.1/",
     });
 
     await runLlmTest({
@@ -218,7 +218,7 @@ describe("OpenAI", () => {
       methodToTest: "streamComplete",
       params: ["Hello", new AbortController().signal],
       expectedRequest: {
-        url: "https://api.openai.com/v1/chat/completions",
+        url: "http://127.0.0.1/",
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -243,7 +243,7 @@ describe("OpenAI", () => {
     const openai = new OpenAI({
       apiKey: "test-api-key",
       model: "gpt-4",
-      apiBase: "https://api.openai.com/v1/",
+      apiBase: "http://127.0.0.1/",
     });
 
     await runLlmTest({
@@ -251,7 +251,7 @@ describe("OpenAI", () => {
       methodToTest: "complete",
       params: ["Hello", new AbortController().signal],
       expectedRequest: {
-        url: "https://api.openai.com/v1/chat/completions",
+        url: "http://127.0.0.1/",
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -276,7 +276,7 @@ describe("OpenAI", () => {
     const openai = new OpenAI({
       apiKey: "test-api-key",
       model: "o3-mini",
-      apiBase: "https://api.openai.com/v1/",
+      apiBase: "http://127.0.0.1/",
     });
 
     await runLlmTest({
@@ -288,7 +288,7 @@ describe("OpenAI", () => {
         { maxTokens: 100 },
       ],
       expectedRequest: {
-        url: "https://api.openai.com/v1/chat/completions",
+        url: "http://127.0.0.1/",
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -310,7 +310,7 @@ describe("OpenAI", () => {
     const openai = new OpenAI({
       apiKey: "test-api-key",
       model: "gpt-4",
-      apiBase: "https://api.openai.com/v1/",
+      apiBase: "http://127.0.0.1/",
     });
 
     const tools = [
@@ -333,7 +333,7 @@ describe("OpenAI", () => {
         { tools },
       ],
       expectedRequest: {
-        url: "https://api.openai.com/v1/chat/completions",
+        url: "http://127.0.0.1/",
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -365,7 +365,7 @@ describe("OpenAI", () => {
     const openai = new OpenAI({
       apiKey: "test-api-key",
       model: "gpt-4",
-      apiBase: "https://api.openai.com/v1/",
+      apiBase: "http://127.0.0.1/",
     });
 
     await runLlmTest({
@@ -377,7 +377,7 @@ describe("OpenAI", () => {
         { maxTokens: 500 },
       ],
       expectedRequest: {
-        url: "https://api.openai.com/v1/chat/completions",
+        url: "http://127.0.0.1/",
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -399,7 +399,7 @@ describe("OpenAI", () => {
     const openai = new OpenAI({
       apiKey: "test-api-key",
       model: "text-embedding-ada-002",
-      apiBase: "https://api.openai.com/v1/",
+      apiBase: "http://127.0.0.1/",
     });
 
     await runLlmTest({
@@ -407,7 +407,7 @@ describe("OpenAI", () => {
       methodToTest: "embed",
       params: [["Hello", "World"]],
       expectedRequest: {
-        url: "https://api.openai.com/v1/embeddings",
+        url: "http://127.0.0.1/",
         method: "POST",
         headers: {
           Authorization: "Bearer test-api-key",

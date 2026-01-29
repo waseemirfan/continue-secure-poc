@@ -1,4 +1,4 @@
-import {
+﻿import {
   BlockType,
   ConfigYaml,
   createPromptMarkdown,
@@ -56,7 +56,7 @@ function getContentsForNewBlock(blockType: BlockType): ConfigYaml {
       configYaml.docs = [
         {
           name: "New docs",
-          startUrl: "https://docs.continue.dev",
+          startUrl: "http://127.0.0.1/",
         },
       ];
       break;

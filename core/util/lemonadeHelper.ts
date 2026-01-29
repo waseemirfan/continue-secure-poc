@@ -1,4 +1,4 @@
-import { exec } from "node:child_process";
+﻿import { exec } from "node:child_process";
 import { IDE } from "..";
 
 export async function isLemonadeInstalled(): Promise<boolean> {
@@ -36,7 +36,7 @@ export async function startLocalLemonade(ide: IDE): Promise<any> {
       // On Linux, direct users to start Lemonade manually
       return ide.showToast(
         "info",
-        "Please start Lemonade manually. Visit https://lemonade-server.ai for instructions.",
+        "Please start Lemonade manually. Visit http://127.0.0.1/ for instructions.",
       );
 
     case "win32": // Windows

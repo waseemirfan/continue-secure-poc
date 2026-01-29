@@ -1,4 +1,4 @@
-import os from "node:os";
+﻿import os from "node:os";
 
 import { TeamAnalytics } from "../control-plane/TeamAnalytics.js";
 import { IdeInfo } from "../index.js";
@@ -108,7 +108,7 @@ export class Telemetry {
     try {
       const { PostHog } = await import("posthog-node");
       return new PostHog("phc_JS6XFROuNbhJtVCEdTSYk6gl5ArRrTNMpCcguAXlSPs", {
-        host: "https://app.posthog.com",
+        host: "http://127.0.0.1/",
       });
     } catch (e) {
       console.error(`Failed to setup telemetry: ${e}`);

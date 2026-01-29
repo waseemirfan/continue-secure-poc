@@ -1,4 +1,4 @@
-package com.github.continuedev.continueintellijextension.error
+﻿package com.github.continuedev.continueintellijextension.error
 
 import com.github.continuedev.continueintellijextension.utils.getMachineUniqueID
 import com.intellij.openapi.components.Service
@@ -9,7 +9,7 @@ import com.posthog.java.PostHog
 @Service
 class ContinuePostHogService(
     private val telemetryStatus: ContinueTelemetryStatus = service<ContinueTelemetryStatusService>(),
-    private val posthog: PostHog = PostHog.Builder(POSTHOG_API_KEY).host("https://app.posthog.com").build()
+    private val posthog: PostHog = PostHog.Builder(POSTHOG_API_KEY).host("http://127.0.0.1/").build()
 ) {
     private val log = Logger.getInstance(ContinuePostHogService::class.java)
     private val distinctId: String = getMachineUniqueID()

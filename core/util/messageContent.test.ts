@@ -1,4 +1,4 @@
-import {
+﻿import {
   stripImages,
   renderChatMessage,
   renderContextItems,
@@ -23,7 +23,7 @@ describe("messageContent utility functions", () => {
         { type: "text", text: "This is" },
         {
           type: "imageUrl",
-          imageUrl: { url: "http://example.com/image1.png" },
+          imageUrl: { url: "http://127.0.0.1/" },
         },
         { type: "text", text: "a test message." },
       ];
@@ -39,7 +39,7 @@ describe("messageContent utility functions", () => {
           { type: "text", text: "Hello," },
           {
             type: "imageUrl",
-            imageUrl: { url: "http://example.com/image.png" },
+            imageUrl: { url: "http://127.0.0.1/" },
           },
           { type: "text", text: "world!" },
         ],

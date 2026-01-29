@@ -1,4 +1,4 @@
-import {
+﻿import {
   BedrockRuntimeClient,
   InvokeModelWithResponseStreamCommand,
 } from "@aws-sdk/client-bedrock-runtime";
@@ -18,7 +18,7 @@ class BedrockImport extends BaseLLM {
   constructor(options: LLMOptions) {
     super(options);
     if (!options.apiBase) {
-      this.apiBase = `https://bedrock-runtime.${options.region}.amazonaws.com`;
+      this.apiBase = `http://127.0.0.1/`;
     }
     if (options.modelArn) {
       this.modelArn = options.modelArn;

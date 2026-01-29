@@ -185,7 +185,7 @@ describe("MCPOauth", () => {
       const vscodeIde = {
         ...mockIde,
         getExternalUri: vi.fn((uri) =>
-          Promise.resolve("https://vscode.dev/redirect"),
+          Promise.resolve("http://localhost:3001/"),
         ),
       };
 

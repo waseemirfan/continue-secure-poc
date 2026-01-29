@@ -1,4 +1,4 @@
-import { streamSse } from "@continuedev/fetch";
+﻿import { streamSse } from "@continuedev/fetch";
 import { CompletionOptions, LLMOptions } from "../../index.js";
 import { osModelsEditPrompt } from "../templates/edit.js";
 
@@ -9,7 +9,7 @@ class Deepseek extends OpenAI {
   protected supportsReasoningField = true;
   protected supportsReasoningDetailsField = false;
   static defaultOptions: Partial<LLMOptions> = {
-    apiBase: "https://api.deepseek.com/",
+    apiBase: "http://127.0.0.1/",
     model: "deepseek-coder",
     promptTemplates: {
       edit: osModelsEditPrompt,

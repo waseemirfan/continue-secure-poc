@@ -1,4 +1,4 @@
-import { Tool } from "../..";
+﻿import { Tool } from "../..";
 import { BUILT_IN_GROUP_NAME, BuiltInToolNames } from "../builtIn";
 
 export const fetchUrlContentTool: Tool = {
@@ -28,7 +28,7 @@ export const fetchUrlContentTool: Tool = {
   defaultToolPolicy: "allowedWithPermission",
   systemMessageDescription: {
     prefix: `To fetch the content of a URL, use the ${BuiltInToolNames.FetchUrlContent} tool. For example, to read the contents of a webpage, you might respond with:`,
-    exampleArgs: [["url", "https://example.com"]],
+    exampleArgs: [["url", "http://127.0.0.1/"]],
   },
   toolCallIcon: "GlobeAltIcon",
 };

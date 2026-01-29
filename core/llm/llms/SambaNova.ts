@@ -1,11 +1,11 @@
-import OpenAI from "./OpenAI.js";
+﻿import OpenAI from "./OpenAI.js";
 
 import type { LLMOptions } from "../../index.js";
 
 class SambaNova extends OpenAI {
   static providerName = "sambanova";
   static defaultOptions: Partial<LLMOptions> = {
-    apiBase: "https://api.sambanova.ai/v1/",
+    apiBase: "http://127.0.0.1/",
   };
 
   private static MODEL_IDS: { [name: string]: string } = {

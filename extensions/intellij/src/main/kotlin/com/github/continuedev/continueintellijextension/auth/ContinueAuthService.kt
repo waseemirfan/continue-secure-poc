@@ -1,4 +1,4 @@
-package com.github.continuedev.continueintellijextension.auth
+﻿package com.github.continuedev.continueintellijextension.auth
 
 import com.github.continuedev.continueintellijextension.error.ContinueSentryService
 import com.github.continuedev.continueintellijextension.services.ContinueExtensionSettings
@@ -37,13 +37,13 @@ class ContinueAuthService {
     private fun getControlPlaneUrl(): String {
         val env = service<ContinueExtensionSettings>().continueState.continueTestEnvironment;
         when (env) {
-            "none" -> return "https://control-plane-api-service-i3dqylpbqa-uc.a.run.app"
+            "none" -> return "http://localhost:3001"
             "local" -> return "http://localhost:3001"
-            "production" -> return "https://api.continue.dev"
-            "test" -> return "https://api-test.continue.dev"
+            "production" -> return "http://localhost:3001"
+            "test" -> return "http://localhost:3001"
         }
 
-        return "https://control-plane-api-service-i3dqylpbqa-uc.a.run.app"
+        return "http://localhost:3001"
     }
 
     init {

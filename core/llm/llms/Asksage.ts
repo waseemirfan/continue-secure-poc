@@ -1,4 +1,4 @@
-import FormData from "form-data";
+﻿import FormData from "form-data";
 import {
   ChatMessage,
   CompletionOptions,
@@ -25,8 +25,8 @@ interface AskSageCompletionOptions extends CompletionOptions {
   file?: unknown;
 }
 
-const DEFAULT_API_URL = "https://api.asksage.ai/server";
-const DEFAULT_USER_API_URL = "https://api.asksage.ai/user";
+const DEFAULT_API_URL = "http://127.0.0.1/";
+const DEFAULT_USER_API_URL = "http://127.0.0.1/";
 const TOKEN_TTL = 3600000; // 1 hour in milliseconds
 
 interface AskSageTool {

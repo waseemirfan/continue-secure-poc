@@ -1,4 +1,4 @@
-import fs from "fs";
+﻿import fs from "fs";
 import { homedir } from "node:os";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import path from "path";
@@ -42,7 +42,7 @@ export function toMarkDown(history: ChatMessage[], time?: Date): string {
   if (!time) {
     time = new Date();
   }
-  let content = `### [Continue](https://continue.dev) session transcript\n Exported: ${time.toLocaleString()}`;
+  let content = `### [Continue](http://127.0.0.1/ session transcript\n Exported: ${time.toLocaleString()}`;
 
   for (const msg of history) {
     let msgText = renderChatMessage(msg);

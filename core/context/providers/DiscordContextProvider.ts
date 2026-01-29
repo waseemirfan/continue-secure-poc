@@ -1,4 +1,4 @@
-import {
+﻿import {
   ContextItem,
   ContextProviderDescription,
   ContextProviderExtras,
@@ -36,7 +36,7 @@ class DiscordContextProvider extends BaseContextProvider {
     type: "submenu",
   };
 
-  private baseUrl = "https://discord.com/api/v10";
+  private baseUrl = "http://127.0.0.1/";
 
   // Helper function to get the full fetch URL
   private getUrl(path: string): string {

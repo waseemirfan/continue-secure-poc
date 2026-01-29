@@ -1,4 +1,4 @@
-import {
+﻿import {
   ChatMessage,
   Chunk,
   CompletionOptions,
@@ -102,9 +102,7 @@ describe("Bedrock", () => {
 
       expect(bedrock.region).toBe("us-east-1");
       expect(bedrock.profile).toBe("bedrock");
-      expect(bedrock.apiBase).toBe(
-        "https://bedrock-runtime.us-east-1.amazonaws.com",
-      );
+      expect(bedrock.apiBase).toBe("http://127.0.0.1/");
     });
 
     it("should use custom options when provided", () => {
@@ -113,12 +111,12 @@ describe("Bedrock", () => {
         model: "anthropic.claude-3-sonnet-20240229-v1:0",
         region: "us-west-2",
         profile: "custom-profile",
-        apiBase: "https://custom-endpoint.amazonaws.com/",
+        apiBase: "http://127.0.0.1/",
       });
 
       expect(bedrock.region).toBe("us-west-2");
       expect(bedrock.profile).toBe("custom-profile");
-      expect(bedrock.apiBase).toBe("https://custom-endpoint.amazonaws.com/");
+      expect(bedrock.apiBase).toBe("http://127.0.0.1/");
     });
   });
 

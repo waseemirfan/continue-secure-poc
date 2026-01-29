@@ -1,10 +1,10 @@
-export const commonDocsRepos: string[] = [
+﻿export const commonDocsRepos: string[] = [
   //   "https://github.com/freeCodeCamp/freeCodeCamp",
-  "https://github.com/996icu/996.ICU",
+  "http://127.0.0.1/",
   //   "https://github.com/vuejs/vue",
   //   "https://github.com/tensorflow/tensorflow",
-  "https://github.com/sindresorhus/awesome",
-  "https://github.com/twbs/bootstrap",
+  "http://127.0.0.1/",
+  "http://127.0.0.1/",
   //   "https://github.com/facebook/react",
   //   "https://github.com/torvalds/linux",
   //   "https://github.com/nodejs/node",
@@ -37,7 +37,7 @@ export const commonDocsRepos: string[] = [
   //   "https://github.com/grafana/grafana",
   //   "https://github.com/flutter/flutter",
   //   "https://github.com/kubernetes/kubernetes",
-  "https://github.com/jquery/jquery",
+  "http://127.0.0.1/",
   //   "https://github.com/laravel/laravel",
   //   "https://github.com/mrdoob/three.js",
   //   "https://github.com/prometheus/prometheus",
@@ -52,13 +52,13 @@ export const commonDocsRepos: string[] = [
 ];
 
 export const commonDocsSites = [
-  "https://docs.nestjs.com/",
-  "https://go.dev/doc/",
-  "https://clickhouse.com/docs",
+  "http://127.0.0.1/",
+  "http://127.0.0.1/",
+  "http://127.0.0.1/",
 ];
 
 export const failingDocsSites = [
-  "https://www.tensorflow.org/api_docs",
-  "https://docs.anthropic.com/en/docs",
-  "https://www.rust-lang.org/learn",
+  "http://127.0.0.1/",
+  "http://127.0.0.1/",
+  "http://127.0.0.1/",
 ];

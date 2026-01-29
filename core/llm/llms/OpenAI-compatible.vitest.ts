@@ -1,4 +1,4 @@
-import { createOpenAISubclassTests } from "./test-utils/openai-test-utils.js";
+﻿import { createOpenAISubclassTests } from "./test-utils/openai-test-utils.js";
 
 // Import all OpenAI-compatible providers
 import OpenAI from "./OpenAI.js";
@@ -174,7 +174,7 @@ describe("OpenAI", () => {
     const openai = new OpenAI({
       apiKey: "test-api-key",
       model: "gpt-4",
-      apiBase: "https://api.openai.com/v1/",
+      apiBase: "http://127.0.0.1/",
     });
 
     await runLlmTest({
@@ -185,7 +185,7 @@ describe("OpenAI", () => {
         new AbortController().signal,
       ],
       expectedRequest: {
-        url: "https://api.openai.com/v1/chat/completions",
+        url: "http://127.0.0.1/",
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -210,7 +210,7 @@ describe("OpenAI", () => {
     const openai = new OpenAI({
       apiKey: "test-api-key",
       model: "text-embedding-ada-002",
-      apiBase: "https://api.openai.com/v1/",
+      apiBase: "http://127.0.0.1/",
     });
 
     await runLlmTest({
@@ -218,7 +218,7 @@ describe("OpenAI", () => {
       methodToTest: "embed",
       params: [["Hello", "World"]],
       expectedRequest: {
-        url: "https://api.openai.com/v1/embeddings",
+        url: "http://127.0.0.1/",
         method: "POST",
         headers: {
           Authorization: "Bearer test-api-key",
@@ -240,7 +240,7 @@ describe("OpenAI", () => {
 // OpenAI-compatible providers
 createOpenAISubclassTests(Groq, {
   providerName: "groq",
-  defaultApiBase: "https://api.groq.com/openai/v1/",
+  defaultApiBase: "http://127.0.0.1/",
   modelConversions: {
     "mistral-8x7b": "mixtral-8x7b-32768",
     "llama3-8b": "llama3-8b-8192",
@@ -252,7 +252,7 @@ createOpenAISubclassTests(Groq, {
 
 createOpenAISubclassTests(Fireworks, {
   providerName: "fireworks",
-  defaultApiBase: "https://api.fireworks.ai/inference/v1/",
+  defaultApiBase: "http://127.0.0.1/",
   modelConversions: {
     "starcoder-7b": "accounts/fireworks/models/starcoder-7b",
   },
@@ -262,7 +262,7 @@ createOpenAISubclassTests(Fireworks, {
 
 createOpenAISubclassTests(Together, {
   providerName: "together",
-  defaultApiBase: "https://api.together.xyz/v1/",
+  defaultApiBase: "http://127.0.0.1/",
   modelConversions: {
     "codellama-7b": "codellama-7b",
     "llama3-8b": "meta-llama/Llama-3-8b-chat-hf",
@@ -274,17 +274,17 @@ createOpenAISubclassTests(Together, {
 
 createOpenAISubclassTests(Deepseek, {
   providerName: "deepseek",
-  defaultApiBase: "https://api.deepseek.com/",
+  defaultApiBase: "http://127.0.0.1/",
 });
 
 createOpenAISubclassTests(OpenRouter, {
   providerName: "openrouter",
-  defaultApiBase: "https://openrouter.ai/api/v1/",
+  defaultApiBase: "http://127.0.0.1/",
 });
 
 createOpenAISubclassTests(xAI, {
   providerName: "xAI",
-  defaultApiBase: "https://api.x.ai/v1/",
+  defaultApiBase: "http://127.0.0.1/",
   modelConversions: {
     "grok-beta": "grok-beta",
   },
@@ -293,7 +293,7 @@ createOpenAISubclassTests(xAI, {
 
 createOpenAISubclassTests(Mistral, {
   providerName: "mistral",
-  defaultApiBase: "https://api.mistral.ai/v1/",
+  defaultApiBase: "http://127.0.0.1/",
   modelConversions: {
     "mistral-7b": "mistral-7b",
     "mistral-8x7b": "open-mixtral-8x7b",
@@ -303,17 +303,17 @@ createOpenAISubclassTests(Mistral, {
 
 createOpenAISubclassTests(Mimo, {
   providerName: "mimo",
-  defaultApiBase: "https://api.xiaomimimo.com/v1/",
+  defaultApiBase: "http://127.0.0.1/",
 });
 
 createOpenAISubclassTests(LMStudio, {
   providerName: "lmstudio",
-  defaultApiBase: "http://localhost:1234/v1/",
+  defaultApiBase: "http://127.0.0.1/",
 });
 
 createOpenAISubclassTests(Cerebras, {
   providerName: "cerebras",
-  defaultApiBase: "https://api.cerebras.ai/v1/",
+  defaultApiBase: "http://127.0.0.1/",
   modelConversions: {
     "llama3.1-8b": "llama3.1-8b",
     "llama3.1-70b": "llama3.1-70b",
@@ -324,9 +324,8 @@ createOpenAISubclassTests(Cerebras, {
 
 createOpenAISubclassTests(DeepInfra, {
   providerName: "deepinfra",
-  defaultApiBase: "https://api.deepinfra.com/v1/openai/",
-  customEmbeddingsUrl:
-    "https://api.deepinfra.com/v1/inference/text-embedding-ada-002",
+  defaultApiBase: "http://127.0.0.1/",
+  customEmbeddingsUrl: "http://127.0.0.1/",
   customEmbeddingsHeaders: {
     Authorization: "bearer test-api-key",
   },
@@ -337,7 +336,7 @@ createOpenAISubclassTests(DeepInfra, {
 
 createOpenAISubclassTests(Nvidia, {
   providerName: "nvidia",
-  defaultApiBase: "https://integrate.api.nvidia.com/v1/",
+  defaultApiBase: "http://127.0.0.1/",
   customEmbeddingsHeaders: {
     Authorization: "Bearer test-api-key",
     "Content-Type": "application/json",
@@ -352,38 +351,38 @@ createOpenAISubclassTests(Nvidia, {
 
 createOpenAISubclassTests(SambaNova, {
   providerName: "sambanova",
-  defaultApiBase: "https://api.sambanova.ai/v1/",
+  defaultApiBase: "http://127.0.0.1/",
 });
 
 createOpenAISubclassTests(Scaleway, {
   providerName: "scaleway",
-  defaultApiBase: "https://api.scaleway.ai/v1/",
+  defaultApiBase: "http://127.0.0.1/",
 });
 
 createOpenAISubclassTests(Venice, {
   providerName: "venice",
-  defaultApiBase: "https://api.venice.ai/api/v1/",
+  defaultApiBase: "http://127.0.0.1/",
 });
 
 createOpenAISubclassTests(Moonshot, {
   providerName: "moonshot",
-  defaultApiBase: "https://api.moonshot.cn/v1/",
+  defaultApiBase: "http://127.0.0.1/",
 });
 
 createOpenAISubclassTests(Novita, {
   providerName: "novita",
-  defaultApiBase: "https://api.novita.ai/v3/openai/",
+  defaultApiBase: "http://127.0.0.1/",
   customStreamCompleteEndpoint: "completions",
 });
 
 createOpenAISubclassTests(SiliconFlow, {
   providerName: "siliconflow",
-  defaultApiBase: "https://api.siliconflow.cn/v1/",
+  defaultApiBase: "http://127.0.0.1/",
 });
 
 createOpenAISubclassTests(Kindo, {
   providerName: "kindo",
-  defaultApiBase: "https://llm.kindo.ai/v1/",
+  defaultApiBase: "http://127.0.0.1/",
 });
 
 createOpenAISubclassTests(Azure, {
@@ -392,7 +391,7 @@ createOpenAISubclassTests(Azure, {
 
 createOpenAISubclassTests(Inception, {
   providerName: "inception",
-  defaultApiBase: "https://api.inceptionlabs.ai/v1/",
+  defaultApiBase: "http://127.0.0.1/",
   customBodyOptions: {
     temperature: 0.0,
     presence_penalty: 1.5,
@@ -402,27 +401,27 @@ createOpenAISubclassTests(Inception, {
 
 createOpenAISubclassTests(Docker, {
   providerName: "docker",
-  defaultApiBase: "http://localhost:12434/engines/v1/",
+  defaultApiBase: "http://127.0.0.1/",
 });
 
 createOpenAISubclassTests(Voyage, {
   providerName: "voyage",
-  defaultApiBase: "https://api.voyageai.com/v1/",
+  defaultApiBase: "http://127.0.0.1/",
 });
 
 createOpenAISubclassTests(Vllm, {
   providerName: "vllm",
-  defaultApiBase: "https://api.openai.com/v1/",
+  defaultApiBase: "http://127.0.0.1/",
 });
 
 createOpenAISubclassTests(TextGenWebUI, {
   providerName: "text-gen-webui",
-  defaultApiBase: "http://localhost:5000/v1/",
+  defaultApiBase: "http://127.0.0.1/",
 });
 
 createOpenAISubclassTests(FunctionNetwork, {
   providerName: "function-network",
-  defaultApiBase: "https://api.function.network/v1/",
+  defaultApiBase: "http://127.0.0.1/",
   customEmbeddingsHeaders: {
     Authorization: "Bearer test-api-key",
     "Content-Type": "application/json",
@@ -431,8 +430,8 @@ createOpenAISubclassTests(FunctionNetwork, {
 
 createOpenAISubclassTests(NCompass, {
   providerName: "ncompass",
-  defaultApiBase: "https://api.ncompass.tech/v1/",
-  customEmbeddingsUrl: "https://api.gcp.ncompass.tech/v1/embeddings",
+  defaultApiBase: "http://127.0.0.1/",
+  customEmbeddingsUrl: "http://127.0.0.1/",
   customEmbeddingsHeaders: {
     Authorization: "Bearer test-api-key",
     "Content-Type": "application/json",
@@ -445,15 +444,15 @@ createOpenAISubclassTests(NCompass, {
 
 createOpenAISubclassTests(LlamaStack, {
   providerName: "llamastack",
-  defaultApiBase: "http://localhost:8321/v1/openai/v1/",
+  defaultApiBase: "http://127.0.0.1/",
 });
 
 createOpenAISubclassTests(Nebius, {
   providerName: "nebius",
-  defaultApiBase: "https://api.studio.nebius.ai/v1/",
+  defaultApiBase: "http://127.0.0.1/",
 });
 
 createOpenAISubclassTests(OVHcloud, {
   providerName: "ovhcloud",
-  defaultApiBase: "https://oai.endpoints.kepler.ai.cloud.ovh.net/v1/",
+  defaultApiBase: "http://127.0.0.1/",
 });

@@ -1,4 +1,4 @@
-import { AuthClient, GoogleAuth, JWT, auth } from "google-auth-library";
+﻿import { AuthClient, GoogleAuth, JWT, auth } from "google-auth-library";
 
 import { streamResponse, streamSse } from "@continuedev/fetch";
 import { ChatMessage, CompletionOptions, LLMOptions } from "../../index.js";
@@ -15,7 +15,7 @@ class VertexAI extends BaseLLM {
   declare vertexProvider: "mistral" | "anthropic" | "gemini" | "unknown";
   declare anthropicInstance: Anthropic;
   declare geminiInstance: Gemini;
-  static AUTH_SCOPES = "https://www.googleapis.com/auth/cloud-platform";
+  static AUTH_SCOPES = "http://127.0.0.1/";
 
   static defaultOptions: Partial<LLMOptions> | undefined = {
     maxEmbeddingBatchSize: 250,
@@ -100,7 +100,7 @@ class VertexAI extends BaseLLM {
       }
       if (this.vertexProvider !== "gemini") {
         throw new Error(
-          "VertexAI: only gemini models are supported in express (apiKey) mode. See https://cloud.google.com/vertex-ai/generative-ai/docs/start/express-mode/overview#models",
+          "VertexAI: only gemini models are supported in express (apiKey) mode. See http://127.0.0.1/",
         );
       }
     } else {
@@ -169,9 +169,9 @@ class VertexAI extends BaseLLM {
     if (!this.apiBase) {
       if (apiKey) {
         // Express mode
-        this.apiBase = `https://aiplatform.googleapis.com/v1/`;
+        this.apiBase = `http://127.0.0.1/`;
       } else {
-        this.apiBase = `https://${region}-aiplatform.googleapis.com/v1/projects/${projectId}/locations/${region}/`;
+        this.apiBase = `http://127.0.0.1/projects/${projectId}/locations/${region}/`;
       }
     }
 

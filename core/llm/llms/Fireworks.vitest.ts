@@ -1,9 +1,9 @@
-import Fireworks from "./Fireworks.js";
+﻿import Fireworks from "./Fireworks.js";
 import { createOpenAISubclassTests } from "./test-utils/openai-test-utils.js";
 
 createOpenAISubclassTests(Fireworks, {
   providerName: "fireworks",
-  defaultApiBase: "https://api.fireworks.ai/inference/v1/",
+  defaultApiBase: "http://127.0.0.1/",
   modelConversions: {
     "starcoder-7b": "accounts/fireworks/models/starcoder-7b",
   },
